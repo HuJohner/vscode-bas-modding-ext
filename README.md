@@ -17,4 +17,4 @@ Check the issues on Github [here](https://github.com/HuJohner/vscode-bas-modding
 
 ## Release Notes
 
-You can find the full changelog [here](https://github.com/HuJohner/vscode-bas-modding-ext/blob/master/CHANGELOG.md).
+You can find the full changelog [here](https://github.com/HuJohner/vscode-bas-modding-ext/blob/main/CHANGELOG.md).

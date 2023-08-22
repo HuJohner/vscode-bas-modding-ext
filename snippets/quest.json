@@ -1,0 +1,651 @@
+{
+    "QuestData": {
+        "scope": "json",
+        "prefix": "questdata",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.QuestData, QuestFramework\",",
+            "\t\"id\": \"${1:ExampleQuest}\",",
+            "\t\"sensitiveContent\": \"${2|None,Blood,Burns,Dismemberment,Desecration,Skeleton,Spider,Insect,Snake,Bird,Fright|}\",",
+            "\t\"sensitiveFilterBehaviour\": \"${3|Discard,Keep|}\",",
+            "\t\"version\": 0,",
+            "\t\"pois\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "PointOfInterest": {
+        "scope": "json",
+        "prefix": "poi",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.POI.PointOfInterest, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"levelId\": \"${2:Home}\",",
+            "\t\"areaId\": ${3:null},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"interactionRadius\": ${7:2.5},",
+            "\t\"sequences\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "NPC": {
+        "scope": "json",
+        "prefix": "npc",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.POI.Npc, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"levelId\": \"${2:Home}\",",
+            "\t\"areaId\": ${3:null},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"interactionRadius\": ${7:2.5},",
+            "\t\"rotationY\": ${8:0.0},",
+            "\t\"creatureId\": \" ${9:HumanMale}\",",
+            "\t\"factionId\": ${10:1},",
+            "\t\"containerId\": \"${11:PlayerTutorial}\",",
+            "\t\"brainId\": \"${12:HumanDummy}\",",
+            "\t\"failQuestOnKill\": ${13|true,false|},",
+            "\t\"disablePoiOnKill\": ${14|true,false|},",
+            "\t\"despawnOnInvalid\": ${15|false,true|},",
+            "\t\"sequences\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "Item": {
+        "scope": "json",
+        "prefix": "item",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.POI.Item, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"levelId\": \"${2:Home}\",",
+            "\t\"areaId\": ${3:null},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"interactionRadius\": ${7:2.5},",
+            "\t\"rotation\": {",
+            "\t\t\"x\": ${8:0.0},",
+            "\t\t\"y\": ${9:0.0},",
+            "\t\t\"z\": ${10:0.0}",
+            "\t},",
+            "\t\"itemId\": \" ${11:FoodApple}\",",
+            "\t\"isStatic\": ${12|false,true|},",
+            "\t\"disableOnStoreInInventory\": ${13|true,false|},",
+            "\t\"despawnOnInvalid\": ${14|false,true|},",
+            "\t\"sequences\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "GoToLevel": {
+        "scope": "json",
+        "prefix": "gotolevel",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.POI.GoToLevel, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"levelId\": \"${2:Home}\",",
+            "\t\"areaId\": ${3:null},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"interactionRadius\": ${7:2.5},",
+            "\t\"destinationLevelId\": \" ${8:Home}\",",
+            "\t\"destinationLevelMode\": \"${9:Sandbox}\",",
+            "\t\"destinationLevelOptions\": [",
+            "\t\t",
+            "\t],",
+            "\t\"text\": \"${10:You are about to go Home}\",",
+            "\t\"sequences\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "GoToCoord": {
+        "scope": "json",
+        "prefix": "gotocoord",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.POI.GoToCoord, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"levelId\": \"${2:Home}\",",
+            "\t\"areaId\": ${3:null},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"interactionRadius\": ${7:2.5},",
+            "\t\"destinationPosition\": {",
+            "\t\t\"x\": ${8:0.0},",
+            "\t\t\"y\": ${9:0.0},",
+            "\t\t\"z\": ${10:0.0}",
+            "\t},",
+            "\t\"destinationRotationY\": \"${11:Sandbox}\",",
+            "\t\"text\": \"${12:You are about to go Home}\",",
+            "\t\"sequences\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "Destruction": {
+        "scope": "json",
+        "prefix": "destruction",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.POI.Destruction, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"levelId\": \"${2:Home}\",",
+            "\t\"areaId\": ${3:null},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"interactionRadius\": ${7:2.5},",
+            "\t\"itemIds\": [",
+            "\t\t",
+            "\t],",
+            "\t\"itemFilter\": \"${8|NoneExcept,AnyExcept}\",",
+            "\t\"itemVariableName\": \"${9:ExampleVariable1}\",",
+            "\t\"creatureIds\": [",
+            "\t\t",
+            "\t],",
+            "\t\"creatureFilter\": \"${10|NoneExcept,AnyExcept}\",",
+            "\t\"creatureVariableName\": \"${11:ExampleVariable2}\",",
+            "\t\"sequences\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "Sequence": {
+        "scope": "json",
+        "prefix": "sequence",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Sequence, QuestFramework\",",
+            "\t\"condition\": ${1:null},",
+            "\t\"interactions\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "And": {
+        "scope": "json",
+        "prefix": "and",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.And, QuestFramework\",",
+            "\t\"conditions\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "Or": {
+        "scope": "json",
+        "prefix": "or",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.Or, QuestFramework\",",
+            "\t\"conditions\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "Not": {
+        "scope": "json",
+        "prefix": "not",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.Not, QuestFramework\",",
+            "\t\"condition\": ${1:null}",
+            "}"
+        ]
+    },
+    "QuestState": {
+        "scope": "json",
+        "prefix": "queststate",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.QuestState, QuestFramework\",",
+            "\t\"questId\": \"${1:ExampleQuest}\",",
+            "\t\"state\": \"${2|Completed,None,InProgress,Failed|}\"",
+            "}"
+        ]
+    },
+    "CompareBoolVariable": {
+        "scope": "json",
+        "prefix": "compareboolvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.CompareBoolVariable, QuestFramework\",",
+            "\t\"variableName\": \"${1:IsExample}\",",
+            "\t\"value\": ${2|true,false|},",
+            "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
+            "}"
+        ]
+    },
+    "CompareIntVariable": {
+        "scope": "json",
+        "prefix": "compareintvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.CompareIntVariable, QuestFramework\",",
+            "\t\"variableName\": \"${1:Example}\",",
+            "\t\"value\": ${2:0},",
+            "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
+            "}"
+        ]
+    },
+    "CompareFloatVariable": {
+        "scope": "json",
+        "prefix": "comparefloatvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.CompareFloatVariable, QuestFramework\",",
+            "\t\"variableName\": \"${1:Example}\",",
+            "\t\"value\": ${2:0.0},",
+            "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
+            "}"
+        ]
+    },
+    "CompareStringVariable": {
+        "scope": "json",
+        "prefix": "comparestringvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.CompareStringVariable, QuestFramework\",",
+            "\t\"variableName\": \"${1:Example}\",",
+            "\t\"value\": \"${2:Example}\",",
+            "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
+            "}"
+        ]
+    },
+    "CompareTimeVariable": {
+        "scope": "json",
+        "prefix": "comparetimevariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.CompareTimeVariable, QuestFramework\",",
+            "\t\"variableName\": \"${1:Example}\",",
+            "\t\"comparisonType\": \"${2|Equal,LessThan,GreaterThan|}\"",
+            "}"
+        ]
+    },
+    "InZone": {
+        "scope": "json",
+        "prefix": "inzone",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.InZone, QuestFramework\",",
+            "\t\"creatureIds\": [",
+            "\t\t",
+            "\t],",
+            "\t\"itemIds\": [",
+            "\t\t",
+            "\t],",
+            "\t\"count\": ${1:1}",
+            "}"
+        ]
+    },
+    "ItemInInventory": {
+        "scope": "json",
+        "prefix": "itemininventory",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.ItemInInventory, QuestFramework\",",
+            "\t\"itemId\": \"${1:FoodApple}\",",
+            "\t\"count\": ${2:1}",
+            "}"
+        ]
+    },
+    "IsDestroyed": {
+        "scope": "json",
+        "prefix": "isdestroyed",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.IsDestroyed, QuestFramework\"",
+            "}"
+        ]
+    },
+    "IsGrabbed": {
+        "scope": "json",
+        "prefix": "isgrabbed",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Conditions.IsGrabbed, QuestFramework\"",
+            "}"
+        ]
+    },
+    "Dialog": {
+        "scope": "json",
+        "prefix": "dialog",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.Dialog, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"text\": \"${4:text}\"",
+            "}"
+        ]
+    },
+    "SetQuestState": {
+        "scope": "json",
+        "prefix": "setqueststate",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.SetQuestState, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"state\": \"${4|Completed,None,InProgress,Failed|}\"",
+            "}"
+        ]
+    },
+    "DisablePoi": {
+        "scope": "json",
+        "prefix": "disablepoi",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.DisablePoi, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|}",
+            "}"
+        ]
+    },
+    "Wave": {
+        "scope": "json",
+        "prefix": "wave",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.Wave, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"waveId\": \"${4:Bandit1}\",",
+            "\t\"spawnerIndex\": ${5:0},",
+            "\t\"spawnerName\": ${6:null},",
+            "\t\"spawns\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    },
+    "Spawn": {
+        "scope": "json",
+        "prefix": "spawn",
+        "body": [
+            "{",
+            "\t\"position\": {",
+            "\t\t\"x\": ${1:0.0},",
+            "\t\t\"y\": ${2:0.0},",
+            "\t\t\"z\": ${3:0.0}",
+            "\t},",
+            "\t\"rotation\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t}",
+            "}"
+        ]
+    },
+    "SetBoolVariable": {
+        "scope": "json",
+        "prefix": "setboolvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.SetBoolVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:IsExample}\",",
+            "\t\"value\": ${5|true,false|}",
+            "}"
+        ]
+    },
+    "SetIntVariable": {
+        "scope": "json",
+        "prefix": "setintvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.SetIntVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:Example}\",",
+            "\t\"value\": ${5:0}",
+            "}"
+        ]
+    },
+    "SetFloatVariable": {
+        "scope": "json",
+        "prefix": "setfloatvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.SetFloatVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:Example}\",",
+            "\t\"value\": ${5:0.0}",
+            "}"
+        ]
+    },
+    "SetStringVariable": {
+        "scope": "json",
+        "prefix": "setstringvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.SetStringVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:Example}\",",
+            "\t\"value\": \"${5:Value}\"",
+            "}"
+        ]
+    },
+    "SetTimeVariable": {
+        "scope": "json",
+        "prefix": "settimevariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.SetTimeVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:Example}\"",
+            "}"
+        ]
+    },
+    "IncrementIntVariable": {
+        "scope": "json",
+        "prefix": "incrementintvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.IncrementIntVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:Example}\",",
+            "\t\"value\": ${5:0}",
+            "}"
+        ]
+    },
+    "IncrementFloatVariable": {
+        "scope": "json",
+        "prefix": "incrementfloatvariable",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.IncrementFloatVariable, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"variableName\": \"${4:Example}\",",
+            "\t\"value\": ${5:0.0}",
+            "}"
+        ]
+    },
+    "MoveTo": {
+        "scope": "json",
+        "prefix": "moveto",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.MoveTo, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"position\": {",
+            "\t\t\"x\": ${4:0.0},",
+            "\t\t\"y\": ${5:0.0},",
+            "\t\t\"z\": ${6:0.0}",
+            "\t},",
+            "\t\"moveSpeedRatio\": ${7:1.0},",
+            "\t\"runSpeedRatio\": ${8:1.0},",
+            "\t\"targetRadiusAngle\": ${9:0.0},",
+            "\t\"unobstructedPathFirst\": ${10|false,true|},",
+            "\t\"repathMinDelay\": ${11:0.0},",
+            "\t\"repathMaxDelay\": ${12:0.0}",
+            "}"
+        ]
+    },
+    "JumpTo": {
+        "scope": "json",
+        "prefix": "jumpto",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.JumpTo, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"index\": ${4:1}",
+            "}"
+        ]
+    },
+    "Effect": {
+        "scope": "json",
+        "prefix": "effect",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.Effect, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"effectId\": \"${4:SpellGravityPush}\",",
+            "\t\"intensity\": ${5:1.0},",
+            "\t\"speed\": ${6:1.0},",
+            "\t\"positionOffset\": {",
+            "\t\t\"x\": ${7:0.0},",
+            "\t\t\"y\": ${8:0.0},",
+            "\t\t\"z\": ${9:0.0}",
+            "\t},",
+            "\t\"rotationOffset\": {",
+            "\t\t\"x\": ${10:0.0},",
+            "\t\t\"y\": ${11:0.0},",
+            "\t\t\"z\": ${12:0.0}",
+            "\t}",
+            "}"
+        ]
+    },
+    "Speak": {
+        "scope": "json",
+        "prefix": "speak",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.Speak, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"dialogId\": \"${4:dialog1}\"",
+            "}"
+        ]
+    },
+    "Handshake": {
+        "scope": "json",
+        "prefix": "handshake",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.Handshake, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|}",
+            "}"
+        ]
+    },
+    "ReceiveItem": {
+        "scope": "json",
+        "prefix": "receiveitem",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.ReceiveItem, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"itemId\": \"${4:FoodApple}\",",
+            "\t\"holderName\": ${5:null},",
+            "\t\"receiveAnimationDataId\": \"${6:HumanReceiveItem}\",",
+            "\t\"storeAnimationDataId\": \"${7:HumanStoreItem}\",",
+            "\t\"finishAnimationDataId\": \"${8:HumanReceiveItemFinish}\"",
+            "}"
+        ]
+    },
+    "GiveItem": {
+        "scope": "json",
+        "prefix": "giveitem",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.GiveItem, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"itemId\": \"${4:FoodApple}\",",
+            "\t\"holderName\": ${5:null},",
+            "\t\"prepareAnimationDataId\": \"${6:HumanGiveItemPrepare}\",",
+            "\t\"waitAnimationDataId\": \"${7:HumanGiveItem}\",",
+            "\t\"finishAnimationDataId\": \"${7:HumanGiveItemFinish}\",",
+            "\t\"cancelAnimationDataId\": \"${8:HumanStoreItem}\"",
+            "}"
+        ]
+    },
+    "Animation": {
+        "scope": "json",
+        "prefix": "animation",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.Interactions.Animation, QuestFramework\",",
+            "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
+            "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
+            "\t\"needsPlayerInZone\": ${3|true,false|},",
+            "\t\"animationDataId\": \"${4:HumanSit}\"",
+            "}"
+        ]
+    }
+}

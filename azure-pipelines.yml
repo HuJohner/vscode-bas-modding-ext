@@ -1,0 +1,20 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: npm install
+  displayName: npm install
+
+- script: |
+    sudo npm install -g vsce
+    vsce package
+  displayName: Create VSIX
+
+- bash: |
+    echo ">>> Publish"
+    yarn deploy -p $(MARKETPLACE_PAT)
+  displayName: Publish
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))

@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/condition/CompareIntVariable.json",
+    "title": "JSON schema for CompareIntVariable conditions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./CompareVariable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.CompareIntVariable, QuestFramework"
+        },
+        "value": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

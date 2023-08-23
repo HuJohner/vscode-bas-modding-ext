@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/IncrementIntVariable.json",
+    "title": "JSON schema for IncrementIntVariable interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.IncrementIntVariable, QuestFramework"
+        },
+        "value": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

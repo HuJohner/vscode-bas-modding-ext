@@ -1,0 +1,38 @@
+{
+    "id": "./schemas/quest/interaction/Wave.json",
+    "title": "JSON schema for Wave interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.Wave, QuestFramework"
+        },
+        "waveId": {
+            "type": "string"
+        },
+        "spawnerIndex": {
+            "type": "integer"
+        },
+        "spawnerName": {
+            "type": "string"
+        },
+        "spawns": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "position": {
+                        "$ref": "../../Vector3.json"
+                    },
+                    "rotation": {
+                        "$ref": "../../Vector3.json"
+                    }
+                }
+            }
+        }
+    }
+}

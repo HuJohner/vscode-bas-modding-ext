@@ -1,0 +1,11 @@
+{
+    "id": "./schemas/quest/condition/IsGrabbed.json",
+    "title": "JSON schema for IsGrabbed conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.IsGrabbed, QuestFramework"
+        }
+    }
+}

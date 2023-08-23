@@ -1,0 +1,47 @@
+{
+    "id": "./schemas/catalogdata/QuestData.json",
+    "title": "JSON schema for QuestData files",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./CatalogData.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.QuestData, QuestFramework"
+        },
+        "version": {
+            "default": 0
+        },
+        "pois": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "../quest/poi/PointOfInterest.json"
+                    },
+                    {
+                        "$ref": "../quest/poi/NPC.json"
+                    },
+                    {
+                        "$ref": "../quest/poi/Item.json"
+                    },
+                    {
+                        "$ref": "../quest/poi/GoToLevel.json"
+                    },
+                    {
+                        "$ref": "../quest/poi/GoToCoord.json"
+                    },
+                    {
+                        "$ref": "../quest/poi/Destruction.json"
+                    }
+                ]
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "pois"
+    ]
+}

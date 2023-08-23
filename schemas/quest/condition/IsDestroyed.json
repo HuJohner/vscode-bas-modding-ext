@@ -1,0 +1,11 @@
+{
+    "id": "./schemas/quest/condition/IsDestroyed.json",
+    "title": "JSON schema for IsDestroyed conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.IsDestroyed, QuestFramework"
+        }
+    }
+}

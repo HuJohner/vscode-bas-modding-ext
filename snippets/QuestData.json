@@ -1,26 +1,10 @@
 {
-    "QuestData": {
-        "scope": "json",
-        "prefix": "questdata",
-        "body": [
-            "{",
-            "\t\"$type\": \"QuestFramework.QuestData, QuestFramework\",",
-            "\t\"id\": \"${1:ExampleQuest}\",",
-            "\t\"sensitiveContent\": \"${2|None,Blood,Burns,Dismemberment,Desecration,Skeleton,Spider,Insect,Snake,Bird,Fright|}\",",
-            "\t\"sensitiveFilterBehaviour\": \"${3|Discard,Keep|}\",",
-            "\t\"version\": 0,",
-            "\t\"pois\": [",
-            "\t\t",
-            "\t]",
-            "}"
-        ]
-    },
     "PointOfInterest": {
         "scope": "json",
         "prefix": "poi",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.POI.PointOfInterest, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.POI.PointOfInterest, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"levelId\": \"${2:Home}\",",
             "\t\"areaId\": ${3:null},",
@@ -41,7 +25,7 @@
         "prefix": "npc",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.POI.Npc, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.POI.Npc, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"levelId\": \"${2:Home}\",",
             "\t\"areaId\": ${3:null},",
@@ -70,7 +54,7 @@
         "prefix": "item",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.POI.Item, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.POI.Item, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"levelId\": \"${2:Home}\",",
             "\t\"areaId\": ${3:null},",
@@ -100,7 +84,7 @@
         "prefix": "gotolevel",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.POI.GoToLevel, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.POI.GoToLevel, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"levelId\": \"${2:Home}\",",
             "\t\"areaId\": ${3:null},",
@@ -127,7 +111,7 @@
         "prefix": "gotocoord",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.POI.GoToCoord, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.POI.GoToCoord, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"levelId\": \"${2:Home}\",",
             "\t\"areaId\": ${3:null},",
@@ -155,7 +139,7 @@
         "prefix": "destruction",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.POI.Destruction, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.POI.Destruction, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"levelId\": \"${2:Home}\",",
             "\t\"areaId\": ${3:null},",
@@ -168,12 +152,12 @@
             "\t\"itemIds\": [",
             "\t\t",
             "\t],",
-            "\t\"itemFilter\": \"${8|NoneExcept,AnyExcept}\",",
+            "\t\"itemFilter\": \"${8|NoneExcept,AnyExcept|}\",",
             "\t\"itemVariableName\": \"${9:ExampleVariable1}\",",
             "\t\"creatureIds\": [",
             "\t\t",
             "\t],",
-            "\t\"creatureFilter\": \"${10|NoneExcept,AnyExcept}\",",
+            "\t\"creatureFilter\": \"${10|NoneExcept,AnyExcept|}\",",
             "\t\"creatureVariableName\": \"${11:ExampleVariable2}\",",
             "\t\"sequences\": [",
             "\t\t",
@@ -186,7 +170,7 @@
         "prefix": "sequence",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Sequence, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Sequence, QuestFramework\",",
             "\t\"condition\": ${1:null},",
             "\t\"interactions\": [",
             "\t\t",
@@ -199,7 +183,7 @@
         "prefix": "and",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.And, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.And, QuestFramework\",",
             "\t\"conditions\": [",
             "\t\t",
             "\t]",
@@ -211,7 +195,7 @@
         "prefix": "or",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.Or, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.Or, QuestFramework\",",
             "\t\"conditions\": [",
             "\t\t",
             "\t]",
@@ -223,7 +207,7 @@
         "prefix": "not",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.Not, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.Not, QuestFramework\",",
             "\t\"condition\": ${1:null}",
             "}"
         ]
@@ -233,7 +217,7 @@
         "prefix": "queststate",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.QuestState, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.QuestState, QuestFramework\",",
             "\t\"questId\": \"${1:ExampleQuest}\",",
             "\t\"state\": \"${2|Completed,None,InProgress,Failed|}\"",
             "}"
@@ -244,7 +228,7 @@
         "prefix": "compareboolvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.CompareBoolVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.CompareBoolVariable, QuestFramework\",",
             "\t\"variableName\": \"${1:IsExample}\",",
             "\t\"value\": ${2|true,false|},",
             "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
@@ -256,7 +240,7 @@
         "prefix": "compareintvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.CompareIntVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.CompareIntVariable, QuestFramework\",",
             "\t\"variableName\": \"${1:Example}\",",
             "\t\"value\": ${2:0},",
             "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
@@ -268,7 +252,7 @@
         "prefix": "comparefloatvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.CompareFloatVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.CompareFloatVariable, QuestFramework\",",
             "\t\"variableName\": \"${1:Example}\",",
             "\t\"value\": ${2:0.0},",
             "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
@@ -280,7 +264,7 @@
         "prefix": "comparestringvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.CompareStringVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.CompareStringVariable, QuestFramework\",",
             "\t\"variableName\": \"${1:Example}\",",
             "\t\"value\": \"${2:Example}\",",
             "\t\"comparisonType\": \"${3|Equal,LessThan,GreaterThan|}\"",
@@ -292,7 +276,7 @@
         "prefix": "comparetimevariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.CompareTimeVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.CompareTimeVariable, QuestFramework\",",
             "\t\"variableName\": \"${1:Example}\",",
             "\t\"comparisonType\": \"${2|Equal,LessThan,GreaterThan|}\"",
             "}"
@@ -303,7 +287,7 @@
         "prefix": "inzone",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.InZone, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.InZone, QuestFramework\",",
             "\t\"creatureIds\": [",
             "\t\t",
             "\t],",
@@ -319,7 +303,7 @@
         "prefix": "itemininventory",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.ItemInInventory, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Conditions.ItemInInventory, QuestFramework\",",
             "\t\"itemId\": \"${1:FoodApple}\",",
             "\t\"count\": ${2:1}",
             "}"
@@ -330,7 +314,7 @@
         "prefix": "isdestroyed",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.IsDestroyed, QuestFramework\"",
+            "\t\"\\$type\": \"QuestFramework.Conditions.IsDestroyed, QuestFramework\"",
             "}"
         ]
     },
@@ -339,7 +323,7 @@
         "prefix": "isgrabbed",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Conditions.IsGrabbed, QuestFramework\"",
+            "\t\"\\$type\": \"QuestFramework.Conditions.IsGrabbed, QuestFramework\"",
             "}"
         ]
     },
@@ -348,7 +332,7 @@
         "prefix": "dialog",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.Dialog, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.Dialog, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -361,7 +345,7 @@
         "prefix": "setqueststate",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.SetQuestState, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.SetQuestState, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -374,7 +358,7 @@
         "prefix": "disablepoi",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.DisablePoi, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.DisablePoi, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|}",
@@ -386,7 +370,7 @@
         "prefix": "wave",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.Wave, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.Wave, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -422,7 +406,7 @@
         "prefix": "setboolvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.SetBoolVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.SetBoolVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -436,7 +420,7 @@
         "prefix": "setintvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.SetIntVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.SetIntVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -450,7 +434,7 @@
         "prefix": "setfloatvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.SetFloatVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.SetFloatVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -464,7 +448,7 @@
         "prefix": "setstringvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.SetStringVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.SetStringVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -478,7 +462,7 @@
         "prefix": "settimevariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.SetTimeVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.SetTimeVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -491,7 +475,7 @@
         "prefix": "incrementintvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.IncrementIntVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.IncrementIntVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -505,7 +489,7 @@
         "prefix": "incrementfloatvariable",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.IncrementFloatVariable, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.IncrementFloatVariable, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -519,7 +503,7 @@
         "prefix": "moveto",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.MoveTo, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.MoveTo, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -542,7 +526,7 @@
         "prefix": "jumpto",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.JumpTo, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.JumpTo, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -555,7 +539,7 @@
         "prefix": "effect",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.Effect, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.Effect, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -580,7 +564,7 @@
         "prefix": "speak",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.Speak, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.Speak, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -593,7 +577,7 @@
         "prefix": "handshake",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.Handshake, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.Handshake, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|}",
@@ -605,7 +589,7 @@
         "prefix": "receiveitem",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.ReceiveItem, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.ReceiveItem, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -622,7 +606,7 @@
         "prefix": "giveitem",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.GiveItem, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.GiveItem, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",
@@ -640,7 +624,7 @@
         "prefix": "animation",
         "body": [
             "{",
-            "\t\"$type\": \"QuestFramework.Interactions.Animation, QuestFramework\",",
+            "\t\"\\$type\": \"QuestFramework.Interactions.Animation, QuestFramework\",",
             "\t\"continueBehaviour\": \"${1|FinishAction,ContinueImmediately|}\",",
             "\t\"checkpointBehaviour\": \"${2|None,Current,Next|}\",",
             "\t\"needsPlayerInZone\": ${3|true,false|},",

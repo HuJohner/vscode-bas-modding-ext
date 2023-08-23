@@ -1,0 +1,111 @@
+{
+    "id": "./schemas/quest/poi/NPC.json",
+    "title": "JSON schema for NPCs",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.POI.Npc, QuestFramework"
+        },
+        "condition": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "$ref": "../condition/And.json"
+                },
+                {
+                    "$ref": "../condition/Or.json"
+                },
+                {
+                    "$ref": "../condition/Not.json"
+                },
+                {
+                    "$ref": "../condition/QuestState.json"
+                },
+                {
+                    "$ref": "../condition/CompareBoolVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareIntVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareFloatVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareStringVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareTimeVariable.json"
+                },
+                {
+                    "$ref": "../condition/ItemInInventory.json"
+                },
+                {
+                    "$ref": "../condition/IsDestroyed.json"
+                },
+                {
+                    "$ref": "../condition/IsGrabbed.json"
+                }
+            ],
+            "default": null
+        },
+        "levelId": {
+            "type": "string"
+        },
+        "areaId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "position": {
+            "$ref": "../../Vector3.json"
+        },
+        "interactionRadius": {
+            "type": "number",
+            "default": 2.5
+        },
+        "rotationY": {
+            "type": "number"
+        },
+        "creatureId": {
+            "type": "string"
+        },
+        "factionId": {
+            "type": "integer"
+        },
+        "containerId": {
+            "type": "string"
+        },
+        "brainId": {
+            "type": "string"
+        },
+        "failQuestOnKill": {
+            "type": "boolean",
+            "default": true
+        },
+        "disablePoiOnKill": {
+            "type": "boolean",
+            "default": true
+        },
+        "despawnOnInvalid": {
+            "type": "boolean",
+            "default": false
+        },
+        "sequences": {
+            "type": "array",
+            "items": {
+                "$ref": "../Sequence.json"
+            }
+        }
+    },
+    "required": [
+        "$type",
+        "levelId",
+        "position",
+        "rotationY",
+        "creatureId"
+    ]
+}

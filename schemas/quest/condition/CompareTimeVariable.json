@@ -1,0 +1,15 @@
+{
+    "id": "./schemas/quest/condition/CompareTimeVariable.json",
+    "title": "JSON schema for CompareTimeVariable conditions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./CompareVariable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.CompareTimeVariable, QuestFramework"
+        }
+    }
+}

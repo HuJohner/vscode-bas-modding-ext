@@ -1,0 +1,120 @@
+{
+    "id": "./schemas/quest/Sequence.json",
+    "title": "JSON schema for Sequences",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Sequence, QuestFramework"
+        },
+        "condition": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "$ref": "./condition/And.json"
+                },
+                {
+                    "$ref": "./condition/Or.json"
+                },
+                {
+                    "$ref": "./condition/Not.json"
+                },
+                {
+                    "$ref": "./condition/QuestState.json"
+                },
+                {
+                    "$ref": "./condition/CompareBoolVariable.json"
+                },
+                {
+                    "$ref": "./condition/CompareIntVariable.json"
+                },
+                {
+                    "$ref": "./condition/CompareFloatVariable.json"
+                },
+                {
+                    "$ref": "./condition/CompareStringVariable.json"
+                },
+                {
+                    "$ref": "./condition/CompareTimeVariable.json"
+                },
+                {
+                    "$ref": "./condition/ItemInInventory.json"
+                },
+                {
+                    "$ref": "./condition/IsDestroyed.json"
+                },
+                {
+                    "$ref": "./condition/IsGrabbed.json"
+                }
+            ],
+            "default": null
+        },
+        "interactions": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "./interaction/Dialog.json"
+                    },
+                    {
+                        "$ref": "./interaction/SetQuestState.json"
+                    },
+                    {
+                        "$ref": "./interaction/DisablePoi.json"
+                    },
+                    {
+                        "$ref": "./interaction/Wave.json"
+                    },
+                    {
+                        "$ref": "./interaction/SetBoolVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/SetIntVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/SetFloatVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/SetStringVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/SetTimeVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/IncrementIntVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/IncrementFloatVariable.json"
+                    },
+                    {
+                        "$ref": "./interaction/MoveTo.json"
+                    },
+                    {
+                        "$ref": "./interaction/JumpTo.json"
+                    },
+                    {
+                        "$ref": "./interaction/Effect.json"
+                    },
+                    {
+                        "$ref": "./interaction/Speak.json"
+                    },
+                    {
+                        "$ref": "./interaction/Handshake.json"
+                    },
+                    {
+                        "$ref": "./interaction/ReceiveItem.json"
+                    },
+                    {
+                        "$ref": "./interaction/GiveItem.json"
+                    },
+                    {
+                        "$ref": "./interaction/Animation.json"
+                    }
+                ]
+            },
+            "minItems": 1
+        }
+    }
+}

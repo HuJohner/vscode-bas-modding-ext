@@ -1,0 +1,130 @@
+{
+    "id": "./schemas/quest/poi/Destruction.json",
+    "title": "JSON schema for Destruction",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.POI.Destruction, QuestFramework"
+        },
+        "condition": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "$ref": "../condition/And.json"
+                },
+                {
+                    "$ref": "../condition/Or.json"
+                },
+                {
+                    "$ref": "../condition/Not.json"
+                },
+                {
+                    "$ref": "../condition/QuestState.json"
+                },
+                {
+                    "$ref": "../condition/CompareBoolVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareIntVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareFloatVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareStringVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareTimeVariable.json"
+                },
+                {
+                    "$ref": "../condition/ItemInInventory.json"
+                },
+                {
+                    "$ref": "../condition/IsDestroyed.json"
+                },
+                {
+                    "$ref": "../condition/IsGrabbed.json"
+                }
+            ],
+            "default": null
+        },
+        "levelId": {
+            "type": "string"
+        },
+        "areaId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "position": {
+            "$ref": "../../Vector3.json"
+        },
+        "interactionRadius": {
+            "type": "number",
+            "default": 2.5
+        },
+        "itemIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "itemFilter": {
+            "type": "string",
+            "default": "NoneExcept",
+            "enum": [
+                "NoneExcept",
+                "AnyExcept"
+            ]
+        },
+        "itemVariableName": {
+            "type": "string"
+        },
+        "creatureIds": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "creatureFilter": {
+            "type": "string",
+            "default": "NoneExcept",
+            "enum": [
+                "NoneExcept",
+                "AnyExcept"
+            ]
+        },
+        "creatureVariableName": {
+            "type": "string"
+        },
+        "sequences": {
+            "type": "array",
+            "items": {
+                "$ref": "../Sequence.json"
+            }
+        }
+    },
+    "required": [
+        "$type",
+        "levelId",
+        "position"
+    ],
+    "anyOf": [
+        {
+            "required": [
+                "creatureIds",
+                "creatureVariableName"
+            ]
+        },
+        {
+            "required": [
+                "itemIds",
+                "itemVariableName"
+            ]
+        }
+    ]
+}

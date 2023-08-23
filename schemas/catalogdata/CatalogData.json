@@ -1,0 +1,45 @@
+{
+  "id": "./schemas/catalogdata/CatalogData.json",
+  "title": "JSON schema for CatalogData files",
+  "type": "object",
+  "properties": {
+    "$type": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "sensitiveContent": {
+      "type": "string",
+      "default": "None",
+      "enum": [
+        "None",
+        "Blood",
+        "Burns",
+        "Dismemberment",
+        "Desecration",
+        "Skeleton",
+        "Spider",
+        "Insect",
+        "Snake",
+        "Bird",
+        "Fright"
+      ]
+    },
+    "sensitiveFilterBehaviour": {
+      "type": "string",
+      "default": "Discard",
+      "enum": [
+        "Discard",
+        "Keep"
+      ]
+    },
+    "version": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "version"
+  ]
+}

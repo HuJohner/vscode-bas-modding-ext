@@ -1,0 +1,35 @@
+{
+    "id": "./schemas/quest/interaction/Effect.json",
+    "title": "JSON schema for Effect interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.Effect, QuestFramework"
+        },
+        "effectId": {
+            "type": "string"
+        },
+        "intensity": {
+            "type": "number",
+            "default": 1.0
+        },
+        "speed": {
+            "type": "number",
+            "default": 1.0
+        },
+        "positionOffset": {
+            "$ref": "../../Vector3.json"
+        },
+        "rotationOffset": {
+            "$ref": "../../Vector3.json"
+        }
+    },
+    "required": [
+        "effectId"
+    ]
+}

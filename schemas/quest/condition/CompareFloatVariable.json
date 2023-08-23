@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/condition/CompareFloatVariable.json",
+    "title": "JSON schema for CompareFloatVariable conditions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./CompareVariable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.CompareFloatVariable, QuestFramework"
+        },
+        "value": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

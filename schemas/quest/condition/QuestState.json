@@ -1,0 +1,23 @@
+{
+    "id": "./schemas/quest/condition/QuestState.json",
+    "title": "JSON schema for QuestState conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.QuestState, QuestFramework"
+        },
+        "questId": {
+            "type": "string"
+        },
+        "state": {
+            "type": "string",
+            "enum": [
+                "None",
+                "InProgress",
+                "Completed",
+                "Failed"
+            ]
+        }
+    }
+}

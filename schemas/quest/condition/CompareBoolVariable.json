@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/condition/CompareBoolVariable.json",
+    "title": "JSON schema for CompareBoolVariable conditions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./CompareVariable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.CompareBoolVariable, QuestFramework"
+        },
+        "value": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

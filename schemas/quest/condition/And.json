@@ -1,0 +1,54 @@
+{
+    "id": "./schemas/quest/condition/And.json",
+    "title": "JSON schema for And conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.And, QuestFramework"
+        },
+        "conditions": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "./And.json"
+                    },
+                    {
+                        "$ref": "./Or.json"
+                    },
+                    {
+                        "$ref": "./Not.json"
+                    },
+                    {
+                        "$ref": "./QuestState.json"
+                    },
+                    {
+                        "$ref": "./CompareBoolVariable.json"
+                    },
+                    {
+                        "$ref": "./CompareIntVariable.json"
+                    },
+                    {
+                        "$ref": "./CompareFloatVariable.json"
+                    },
+                    {
+                        "$ref": "./CompareStringVariable.json"
+                    },
+                    {
+                        "$ref": "./CompareTimeVariable.json"
+                    },
+                    {
+                        "$ref": "./ItemInInventory.json"
+                    },
+                    {
+                        "$ref": "./IsDestroyed.json"
+                    },
+                    {
+                        "$ref": "./IsGrabbed.json"
+                    }
+                ]
+            }
+        }
+    }
+}

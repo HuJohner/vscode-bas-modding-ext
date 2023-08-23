@@ -1,0 +1,28 @@
+{
+    "id": "./schemas/quest/interaction/SetQuestState.json",
+    "title": "JSON schema for SetQuestState interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetQuestState, QuestFramework"
+        },
+        "state": {
+            "type": "string",
+            "default": "Completed",
+            "enum": [
+                "None",
+                "InProgress",
+                "Completed",
+                "Failed"
+            ]
+        }
+    },
+    "required": [
+        "state"
+    ]
+}

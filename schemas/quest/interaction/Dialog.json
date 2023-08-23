@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/Dialog.json",
+    "title": "JSON schema for Dialog interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.Dialog, QuestFramework"
+        },
+        "text": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "text"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/Speak.json",
+    "title": "JSON schema for Speak interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.Speak, QuestFramework"
+        },
+        "dialogId": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "dialogId"
+    ]
+}

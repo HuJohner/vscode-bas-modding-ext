@@ -1,0 +1,43 @@
+{
+    "id": "./schemas/quest/interaction/GiveItem.json",
+    "title": "JSON schema for GiveItem interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.GiveItem, QuestFramework"
+        },
+        "itemId": {
+            "type": "string"
+        },
+        "holderName": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "prepareAnimationDataId": {
+            "type": "string",
+            "default": "HumanGiveItemPrepare"
+        },
+        "waitAnimationDataId": {
+            "type": "string",
+            "default": "HumanGiveItem"
+        },
+        "finishAnimationDataId": {
+            "type": "string",
+            "default": "HumanGiveItemFinish"
+        },
+        "cancelAnimationDataId": {
+            "type": "string",
+            "default": "HumanStoreItem"
+        }
+    },
+    "required": [
+        "itemId"
+    ]
+}

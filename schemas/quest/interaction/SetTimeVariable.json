@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/SetTimeVariable.json",
+    "title": "JSON schema for SetTimeVariable interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetTimeVariable, QuestFramework"
+        },
+        "value": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

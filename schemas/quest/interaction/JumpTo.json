@@ -1,0 +1,18 @@
+{
+    "id": "./schemas/quest/interaction/JumpTo.json",
+    "title": "JSON schema for JumpTo interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.JumpTo, QuestFramework"
+        },
+        "index": {
+            "type": "integer"
+        }
+    }
+}

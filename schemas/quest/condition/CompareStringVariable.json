@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/condition/CompareStringVariable.json",
+    "title": "JSON schema for CompareStringVariable conditions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./CompareVariable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.CompareStringVariable, QuestFramework"
+        },
+        "value": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

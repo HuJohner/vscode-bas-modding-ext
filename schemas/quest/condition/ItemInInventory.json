@@ -1,0 +1,22 @@
+{
+    "id": "./schemas/quest/condition/ItemInInventory.json",
+    "title": "JSON schema for ItemInInventory conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.ItemInInventory, QuestFramework"
+        },
+        "itemId": {
+            "type": "string"
+        },
+        "count": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+        }
+    },
+    "required": [
+        "itemId"
+    ]
+}

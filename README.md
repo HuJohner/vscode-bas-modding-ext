@@ -7,6 +7,8 @@
 
 2. Snippets to easily create a quest.
 
+2. JSON validation for Quests.
+
 ## Requirements
 
 There are no requirements or dependencies.

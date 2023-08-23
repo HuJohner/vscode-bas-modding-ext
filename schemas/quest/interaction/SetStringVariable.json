@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/SetStringVariable.json",
+    "title": "JSON schema for SetStringVariable interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetStringVariable, QuestFramework"
+        },
+        "value": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

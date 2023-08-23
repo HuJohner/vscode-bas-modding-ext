@@ -1,0 +1,41 @@
+{
+    "id": "./schemas/quest/interaction/MoveTo.json",
+    "title": "JSON schema for MoveTo interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.MoveTo, QuestFramework"
+        },
+        "position": {
+            "$ref": "../../Vector3.json"
+        },
+        "moveSpeedRatio": {
+            "type": "number",
+            "default": 1.0
+        },
+        "runSpeedRatio": {
+            "type": "number",
+            "default": 1.0
+        },
+        "targetRadiusAngle": {
+            "type": "number"
+        },
+        "unobstructedPathFirst": {
+            "type": "boolean"
+        },
+        "repathMinDelay": {
+            "type": "number"
+        },
+        "repathMaxDelay": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "position"
+    ]
+}

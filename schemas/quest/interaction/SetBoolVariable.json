@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/SetBoolVariable.json",
+    "title": "JSON schema for SetBoolVariable interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetBoolVariable, QuestFramework"
+        },
+        "value": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

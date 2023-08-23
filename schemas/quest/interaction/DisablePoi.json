@@ -1,0 +1,15 @@
+{
+    "id": "./schemas/quest/interaction/DisablePoi.json",
+    "title": "JSON schema for DisablePoi interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.DisablePoi, QuestFramework"
+        }
+    }
+}

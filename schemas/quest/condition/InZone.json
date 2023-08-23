@@ -1,0 +1,46 @@
+{
+    "id": "./schemas/quest/condition/InZone.json",
+    "title": "JSON schema for InZone conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.InZone, QuestFramework"
+        },
+        "creatureIds": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "itemIds": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            }
+        },
+        "count": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+        }
+    },
+    "oneOf": [
+        {
+            "required": [
+                "creatureIds"
+            ]
+        },
+        {
+            "required": [
+                "itemIds"
+            ]
+        }
+    ]
+}

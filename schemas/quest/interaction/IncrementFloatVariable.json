@@ -1,0 +1,21 @@
+{
+    "id": "./schemas/quest/interaction/IncrementFloatVariable.json",
+    "title": "JSON schema for IncrementFloatVariable interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.IncrementFloatVariable, QuestFramework"
+        },
+        "value": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

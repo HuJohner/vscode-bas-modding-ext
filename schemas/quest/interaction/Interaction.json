@@ -1,0 +1,75 @@
+{
+    "id": "./schemas/quest/interaction/Interaction.json",
+    "title": "JSON schema for Interactions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string"
+        },
+        "condition": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "$ref": "../condition/And.json"
+                },
+                {
+                    "$ref": "../condition/Or.json"
+                },
+                {
+                    "$ref": "../condition/Not.json"
+                },
+                {
+                    "$ref": "../condition/QuestState.json"
+                },
+                {
+                    "$ref": "../condition/CompareBoolVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareIntVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareFloatVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareStringVariable.json"
+                },
+                {
+                    "$ref": "../condition/CompareTimeVariable.json"
+                },
+                {
+                    "$ref": "../condition/ItemInInventory.json"
+                },
+                {
+                    "$ref": "../condition/IsDestroyed.json"
+                },
+                {
+                    "$ref": "../condition/IsGrabbed.json"
+                }
+            ],
+            "default": null
+        },
+        "continueBehaviour": {
+            "type": "string",
+            "default": "FinishAction",
+            "enum": [
+                "FinishAction",
+                "ContinueImmediately"
+            ]
+        },
+        "checkpointBehaviour": {
+            "type": "string",
+            "default": "None",
+            "enum": [
+                "None",
+                "Current",
+                "Next"
+            ]
+        },
+        "needsPlayerInZone": {
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

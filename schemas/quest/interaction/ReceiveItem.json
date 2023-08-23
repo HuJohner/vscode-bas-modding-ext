@@ -1,0 +1,40 @@
+{
+    "id": "./schemas/quest/interaction/ReceiveItem.json",
+    "title": "JSON schema for ReceiveItem interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.ReceiveItem, QuestFramework"
+        },
+        "itemId": {
+            "type": "string",
+            "default": "FoodApple"
+        },
+        "holderName": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "receiveAnimationDataId": {
+            "type": "string",
+            "default": "HumanReceiveItem"
+        },
+        "storeAnimationDataId": {
+            "type": "string",
+            "default": "HumanStoreItem"
+        },
+        "finishAnimationDataId": {
+            "type": "string",
+            "default": "HumanReceiveItemFinish"
+        }
+    },
+    "required": [
+        "itemId"
+    ]
+}

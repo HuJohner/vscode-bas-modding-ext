@@ -2,56 +2,64 @@
   "name": "bas-modding",
   "displayName": "BaS Modding",
   "description": "Makes the creation of Blade & Sorcery Mods easier.",
-	"icon": "images/icon.png",
+  "icon": "images/icon.png",
   "version": "0.0.1",
-	"author": "HuJohner",
-	"publisher": "HuJohner",
-	"homepage": "https://www.youtube.com/c/HuJohner",
+  "author": "HuJohner",
+  "publisher": "HuJohner",
+  "homepage": "https://www.youtube.com/c/HuJohner",
   "engines": {
     "vscode": "^1.81.0"
   },
-	"license": "MIT",
+  "license": "MIT",
   "categories": [
     "Other"
   ],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/HuJohner/vscode-bas-modding-ext.git"
-	},
-  "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HuJohner/vscode-bas-modding-ext.git"
+  },
+  "activationEvents": [
+    "workspaceContains:**/manifest.json"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
-			"type": "object",
-			"title": "BaS Modding",
-			"properties": {
-				"bas-modding.username": {
-					"type": "string",
-					"scope": "resource",
-					"default": "",
-					"description": "Value to use to replace <author> variable."
-				}
-			}
-		},
+      "type": "object",
+      "title": "BaS Modding",
+      "properties": {
+        "bas-modding.username": {
+          "type": "string",
+          "scope": "resource",
+          "default": "",
+          "description": "Value to use to replace <author> variable."
+        }
+      }
+    },
     "commands": [
-			{
-				"command": "bas-modding.newMod",
-				"title": "New BaS Mod",
-				"category": "BaS Mod"
-			}
-		],
-		"menus": {
-			"explorer/context": [
-				{
-					"command": "bas-modding.newMod",
-					"group": "bas-modding"
-				}
-			]
-		},
+      {
+        "command": "bas-modding.newMod",
+        "title": "New BaS Mod",
+        "category": "BaS Mod"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "bas-modding.newMod",
+          "group": "bas-modding"
+        }
+      ]
+    },
     "snippets": [
       {
         "language": "json",
-        "path": "./snippets/quest.json"
+        "path": "./snippets/QuestData.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "Quest_*.json",
+        "url": "./schemas/catalogdata/QuestData.json"
       }
     ]
   },

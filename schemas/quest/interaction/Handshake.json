@@ -1,0 +1,15 @@
+{
+    "id": "./schemas/quest/interaction/Handshake.json",
+    "title": "JSON schema for Handshake interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.Handshake, QuestFramework"
+        }
+    }
+}

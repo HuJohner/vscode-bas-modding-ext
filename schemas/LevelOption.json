@@ -1,0 +1,17 @@
+{
+    "id": "./schemas/LevelOption.json",
+    "title": "JSON schema for LevelOptions",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "value": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "value"
+    ]
+}

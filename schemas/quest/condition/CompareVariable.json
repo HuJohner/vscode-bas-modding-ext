@@ -1,0 +1,25 @@
+{
+    "id": "./schemas/quest/condition/CompareVariable.json",
+    "title": "JSON schema for CompareVariable conditions",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string"
+        },
+        "variableName": {
+            "type": "string"
+        },
+        "comparisonType": {
+            "type": "string",
+            "default": "Equal",
+            "enum": [
+                "LessThan",
+                "Equal",
+                "GreaterThan"
+            ]
+        }
+    },
+    "required": [
+        "variableName"
+    ]
+}

@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/CompareBoolVariable.json",
-    "title": "JSON schema for CompareBoolVariable conditions",
+    "title": "CompareBoolVariable condition",
+    "description": "A CompareBoolVariable condition to validate how a boolean variable compares to a value",
     "type": "object",
     "allOf": [
         {

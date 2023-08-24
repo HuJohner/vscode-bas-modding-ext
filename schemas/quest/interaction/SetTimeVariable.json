@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/SetTimeVariable.json",
-    "title": "JSON schema for SetTimeVariable interactions",
+    "title": "SetTimeVariable interaction",
+    "description": "A SetTimeVariable interaction to set a float variable to current time",
     "type": "object",
     "allOf": [
         {
@@ -10,12 +11,6 @@
     "properties": {
         "$type": {
             "const": "QuestFramework.Interactions.SetTimeVariable, QuestFramework"
-        },
-        "value": {
-            "type": "number"
         }
-    },
-    "required": [
-        "value"
-    ]
+    }
 }

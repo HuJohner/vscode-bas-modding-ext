@@ -1,6 +1,6 @@
 {
     "id": "./schemas/quest/poi/GoToCoord.json",
-    "title": "JSON schema for GoToCoord",
+    "title": "GoToCoord POI",
     "type": "object",
     "properties": {
         "$type": {

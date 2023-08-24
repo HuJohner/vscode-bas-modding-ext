@@ -1,6 +1,6 @@
 {
     "id": "./schemas/quest/poi/NPC.json",
-    "title": "JSON schema for NPCs",
+    "title": "NPC POI",
     "type": "object",
     "properties": {
         "$type": {

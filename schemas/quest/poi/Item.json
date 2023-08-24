@@ -1,6 +1,6 @@
 {
     "id": "./schemas/quest/poi/Item.json",
-    "title": "JSON schema for Item",
+    "title": "Item POI",
     "type": "object",
     "properties": {
         "$type": {

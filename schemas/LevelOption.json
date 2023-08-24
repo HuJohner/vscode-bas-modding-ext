@@ -1,6 +1,6 @@
 {
     "id": "./schemas/LevelOption.json",
-    "title": "JSON schema for LevelOptions",
+    "title": "LevelOption",
     "type": "object",
     "properties": {
         "name": {

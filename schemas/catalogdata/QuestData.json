@@ -1,6 +1,7 @@
 {
     "id": "./schemas/catalogdata/QuestData.json",
-    "title": "JSON schema for QuestData files",
+    "title": "QuestData",
+    "description": "A quest for the Quest Framework",
     "type": "object",
     "allOf": [
         {

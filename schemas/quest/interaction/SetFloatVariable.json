@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/SetFloatVariable.json",
-    "title": "JSON schema for SetFloatVariable interactions",
+    "title": "SetFloatVariable interaction",
+    "description": "A SetFloatVariable interaction to set a float variable to a value",
     "type": "object",
     "allOf": [
         {

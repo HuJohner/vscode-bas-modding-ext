@@ -1,6 +1,6 @@
 {
     "id": "./schemas/quest/poi/GoToLevel.json",
-    "title": "JSON schema for GoToLevel",
+    "title": "GoToLevel POI",
     "type": "object",
     "properties": {
         "$type": {

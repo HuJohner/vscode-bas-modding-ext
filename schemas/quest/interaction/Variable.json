@@ -1,6 +1,5 @@
 {
     "id": "./schemas/quest/interaction/Variable.json",
-    "title": "JSON schema for Variable interactions",
     "type": "object",
     "allOf": [
         {

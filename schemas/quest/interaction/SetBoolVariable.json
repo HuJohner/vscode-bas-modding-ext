@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/SetBoolVariable.json",
-    "title": "JSON schema for SetBoolVariable interactions",
+    "title": "SetBoolVariable interaction",
+    "description": "A SetBoolVariable interaction to set a boolean variable to a value",
     "type": "object",
     "allOf": [
         {

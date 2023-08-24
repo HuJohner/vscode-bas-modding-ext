@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/MoveTo.json",
-    "title": "JSON schema for MoveTo interactions",
+    "title": "MoveTo interaction",
+    "description": "A MoveTo interaction to move a POI to a position",
     "type": "object",
     "allOf": [
         {

@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/Or.json",
-    "title": "JSON schema for Or conditions",
+    "title": "OR condition",
+    "description": "An OR condition to validate if any conditions are valid",
     "type": "object",
     "properties": {
         "$type": {

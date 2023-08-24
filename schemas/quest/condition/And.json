@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/And.json",
-    "title": "JSON schema for And conditions",
+    "title": "AND Condition",
+    "description": "An AND condition to validate if all conditions are valid",
     "type": "object",
     "properties": {
         "$type": {

@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/GiveItem.json",
-    "title": "JSON schema for GiveItem interactions",
+    "title": "GiveItem interaction",
+    "description": "A GiveItem interaction to spawn/equip an item and wait for player to grab it",
     "type": "object",
     "allOf": [
         {

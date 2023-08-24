@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/IsGrabbed.json",
-    "title": "JSON schema for IsGrabbed conditions",
+    "title": "IsGrabbed condition",
+    "description": "An IsGrabbed condition to validate if an NPC or item is being grabbed",
     "type": "object",
     "properties": {
         "$type": {

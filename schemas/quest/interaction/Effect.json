@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/Effect.json",
-    "title": "JSON schema for Effect interactions",
+    "title": "Effect interaction",
+    "description": "An Effect interaction to play an effect",
     "type": "object",
     "allOf": [
         {

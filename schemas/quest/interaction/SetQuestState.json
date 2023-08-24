@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/SetQuestState.json",
-    "title": "JSON schema for SetQuestState interactions",
+    "title": "SetQuestState interaction",
+    "description": "A SetQuestState interaction to set the state of the quest",
     "type": "object",
     "allOf": [
         {

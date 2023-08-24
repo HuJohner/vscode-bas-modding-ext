@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/Dialog.json",
-    "title": "JSON schema for Dialog interactions",
+    "title": "Dialog interaction",
+    "description": "A dialog interaction to show dialog",
     "type": "object",
     "allOf": [
         {

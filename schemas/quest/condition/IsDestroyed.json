@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/IsDestroyed.json",
-    "title": "JSON schema for IsDestroyed conditions",
+    "title": "IsDestroyed condition",
+    "description": "An IsDestroyed condition to validate if an NPC or item is killed / broken",
     "type": "object",
     "properties": {
         "$type": {

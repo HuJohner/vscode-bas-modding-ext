@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/ItemInInventory.json",
-    "title": "JSON schema for ItemInInventory conditions",
+    "title": "ItemInInventory condition",
+    "description": "An ItemInInventory condition to validate if the player has an item(s) in the inventory, any holders or in hand",
     "type": "object",
     "properties": {
         "$type": {

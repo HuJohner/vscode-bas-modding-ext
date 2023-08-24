@@ -1,6 +1,5 @@
 {
     "id": "./schemas/quest/condition/CompareVariable.json",
-    "title": "JSON schema for CompareVariable conditions",
     "type": "object",
     "properties": {
         "$type": {

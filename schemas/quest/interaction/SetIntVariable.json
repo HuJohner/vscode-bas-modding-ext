@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/SetIntVariable.json",
-    "title": "JSON schema for SetIntVariable interactions",
+    "title": "SetIntVariable interaction",
+    "description": "A SetIntVariable interaction to set an integer variable to a value",
     "type": "object",
     "allOf": [
         {

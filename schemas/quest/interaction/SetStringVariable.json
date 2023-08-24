@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/SetStringVariable.json",
-    "title": "JSON schema for SetStringVariable interactions",
+    "title": "SetStringVariable interaction",
+    "description": "A SetStringVariable interaction to set a string variable to a value",
     "type": "object",
     "allOf": [
         {

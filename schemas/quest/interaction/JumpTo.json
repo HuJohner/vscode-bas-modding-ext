@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/JumpTo.json",
-    "title": "JSON schema for JumpTo interactions",
+    "title": "JumpTo interaction",
+    "description": "A JumpTo interaction to jump to a different interaction in the sequence",
     "type": "object",
     "allOf": [
         {

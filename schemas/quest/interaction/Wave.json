@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/Wave.json",
-    "title": "JSON schema for Wave interactions",
+    "title": "Wave interaction",
+    "description": "A Wave interaction to start/stop a wave",
     "type": "object",
     "allOf": [
         {

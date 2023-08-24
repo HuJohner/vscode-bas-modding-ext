@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/Speak.json",
-    "title": "JSON schema for Speak interactions",
+    "title": "Speak interaction",
+    "description": "A Speak interaction to play a voiceline",
     "type": "object",
     "allOf": [
         {

@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/CompareIntVariable.json",
-    "title": "JSON schema for CompareIntVariable conditions",
+    "title": "CompareIntVariable condition",
+    "description": "A CompareIntVariable condition to validate how an integer variable compares to a value",
     "type": "object",
     "allOf": [
         {

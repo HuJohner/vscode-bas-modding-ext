@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/QuestState.json",
-    "title": "JSON schema for QuestState conditions",
+    "title": "QuestState condition",
+    "description": "A QuestState condition to validate if a quest is a certain state",
     "type": "object",
     "properties": {
         "$type": {

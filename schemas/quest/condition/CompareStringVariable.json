@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/CompareStringVariable.json",
-    "title": "JSON schema for CompareStringVariable conditions",
+    "title": "CompareStringVariable condition",
+    "description": "A CompareStringVariable condition to validate how a string variable compares to a value",
     "type": "object",
     "allOf": [
         {

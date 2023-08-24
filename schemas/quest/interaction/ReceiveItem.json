@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/ReceiveItem.json",
-    "title": "JSON schema for ReceiveItem interactions",
+    "title": "ReceiveItem interaction",
+    "description": "A ReceiveItem interaction to hold out hand and wait for player to give an item",
     "type": "object",
     "allOf": [
         {

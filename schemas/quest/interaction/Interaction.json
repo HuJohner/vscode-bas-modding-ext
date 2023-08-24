@@ -1,6 +1,5 @@
 {
     "id": "./schemas/quest/interaction/Interaction.json",
-    "title": "JSON schema for Interactions",
     "type": "object",
     "properties": {
         "$type": {

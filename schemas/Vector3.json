@@ -1,6 +1,6 @@
 {
     "id": "./schemas/Vector3.json",
-    "title": "JSON schema for Vector3s",
+    "title": "Vector3",
     "type": "object",
     "properties": {
         "x": {

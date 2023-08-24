@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/CompareFloatVariable.json",
-    "title": "JSON schema for CompareFloatVariable conditions",
+    "title": "CompareFloatVariable condition",
+    "description": "A CompareFloatVariable condition to validate how a float variable compares to a value",
     "type": "object",
     "allOf": [
         {

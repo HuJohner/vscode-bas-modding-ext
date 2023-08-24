@@ -1,6 +1,6 @@
 {
     "id": "./schemas/quest/poi/Destruction.json",
-    "title": "JSON schema for Destruction",
+    "title": "Destruction POI",
     "type": "object",
     "properties": {
         "$type": {

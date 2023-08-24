@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/Not.json",
-    "title": "JSON schema for Not conditions",
+    "title": "NOT condition",
+    "description": "A NOT condition to validate if a condition is not valid",
     "type": "object",
     "properties": {
         "$type": {

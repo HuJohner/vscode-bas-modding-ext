@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/Animation.json",
-    "title": "JSON schema for Animation interactions",
+    "title": "Animation interaction",
+    "description": "An Animation interaction to play/stop an animation on an NPC",
     "type": "object",
     "allOf": [
         {

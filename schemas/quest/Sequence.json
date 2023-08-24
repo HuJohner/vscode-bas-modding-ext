@@ -1,6 +1,6 @@
 {
     "id": "./schemas/quest/Sequence.json",
-    "title": "JSON schema for Sequences",
+    "title": "Sequence",
     "type": "object",
     "properties": {
         "$type": {

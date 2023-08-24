@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/CompareTimeVariable.json",
-    "title": "JSON schema for CompareTimeVariable conditions",
+    "title": "CompareTimeVariable condition",
+    "description": "A CompareTimeVariable condition to validate how a value compares to current time - float variable",
     "type": "object",
     "allOf": [
         {
@@ -10,6 +11,12 @@
     "properties": {
         "$type": {
             "const": "QuestFramework.Conditions.CompareTimeVariable, QuestFramework"
+        },
+        "value": {
+            "type": "number"
         }
-    }
+    },
+    "required": [
+        "value"
+    ]
 }

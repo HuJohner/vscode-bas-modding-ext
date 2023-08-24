@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/DisablePoi.json",
-    "title": "JSON schema for DisablePoi interactions",
+    "title": "DisablePoi interaction",
+    "description": "A DisablePoi interaction to disable a point of interest",
     "type": "object",
     "allOf": [
         {

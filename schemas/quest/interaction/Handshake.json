@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/Handshake.json",
-    "title": "JSON schema for Handshake interactions",
+    "title": "Handshake interaction",
+    "description": "A Handshake interaction to hold out a hand and wait for player to grab it",
     "type": "object",
     "allOf": [
         {

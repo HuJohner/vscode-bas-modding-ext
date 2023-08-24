@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/condition/InZone.json",
-    "title": "JSON schema for InZone conditions",
+    "title": "InZone condition",
+    "description": "An InZone condition to validate if creatures or items are in the POIs interaction radius",
     "type": "object",
     "properties": {
         "$type": {

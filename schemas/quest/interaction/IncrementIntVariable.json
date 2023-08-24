@@ -1,6 +1,7 @@
 {
     "id": "./schemas/quest/interaction/IncrementIntVariable.json",
-    "title": "JSON schema for IncrementIntVariable interactions",
+    "title": "IncrementIntVariable interaction",
+    "description": "A IncrementIntVariable interaction to increment an integer variable by a value",
     "type": "object",
     "allOf": [
         {

@@ -4,6 +4,10 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.0.5] - 2023-08-24
+
+- Fixed $ in snippet
+
 ## [0.0.4] - 2023-08-24
 
 - Added snippet for QuestData

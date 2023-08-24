@@ -1,0 +1,18 @@
+{
+    "QuestData": {
+        "scope": "json",
+        "prefix": "questdata",
+        "body": [
+            "{",
+            "\t\"$type\": \"QuestFramework.QuestData, QuestFramework\",",
+            "\t\"id\": \"${1:ExampleQuest}\",",
+            "\t\"sensitiveContent\": \"${2|None,Blood,Burns,Dismemberment,Desecration,Skeleton,Spider,Insect,Snake,Bird,Fright|}\",",
+            "\t\"sensitiveFilterBehaviour\": \"${3|Discard,Keep|}\",",
+            "\t\"version\": 0,",
+            "\t\"pois\": [",
+            "\t\t",
+            "\t]",
+            "}"
+        ]
+    }
+}

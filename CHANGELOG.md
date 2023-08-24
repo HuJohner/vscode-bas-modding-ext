@@ -4,6 +4,11 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.0.4] - 2023-08-24
+
+- Added snippet for QuestData
+- Fixed erroneous spaces in a few snippets
+
 ## [0.0.3] - 2023-08-24
 
 - Added more detail to json validation

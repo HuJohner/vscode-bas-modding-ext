@@ -4,9 +4,13 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.0.7] - 2023-08-29
+
+- fixed sequence conditions
+
 ## [0.0.6] - 2023-08-29
 
-- Fixed InZone not being a valid condition
+- fixed InZone not being a valid condition
 - added LevelOption snippet
 
 ## [0.0.5] - 2023-08-24

@@ -13,40 +13,7 @@
                     "type": "null"
                 },
                 {
-                    "$ref": "./condition/And.json"
-                },
-                {
-                    "$ref": "./condition/Or.json"
-                },
-                {
-                    "$ref": "./condition/Not.json"
-                },
-                {
-                    "$ref": "./condition/QuestState.json"
-                },
-                {
-                    "$ref": "./condition/CompareBoolVariable.json"
-                },
-                {
-                    "$ref": "./condition/CompareIntVariable.json"
-                },
-                {
-                    "$ref": "./condition/CompareFloatVariable.json"
-                },
-                {
-                    "$ref": "./condition/CompareStringVariable.json"
-                },
-                {
-                    "$ref": "./condition/CompareTimeVariable.json"
-                },
-                {
-                    "$ref": "./condition/ItemInInventory.json"
-                },
-                {
-                    "$ref": "./condition/IsDestroyed.json"
-                },
-                {
-                    "$ref": "./condition/IsGrabbed.json"
+                    "$ref": "./condition/Conditions.json"
                 }
             ],
             "default": null

@@ -11,44 +11,7 @@
         "conditions": {
             "type": "array",
             "items": {
-                "anyOf": [
-                    {
-                        "$ref": "./And.json"
-                    },
-                    {
-                        "$ref": "./Or.json"
-                    },
-                    {
-                        "$ref": "./Not.json"
-                    },
-                    {
-                        "$ref": "./QuestState.json"
-                    },
-                    {
-                        "$ref": "./CompareBoolVariable.json"
-                    },
-                    {
-                        "$ref": "./CompareIntVariable.json"
-                    },
-                    {
-                        "$ref": "./CompareFloatVariable.json"
-                    },
-                    {
-                        "$ref": "./CompareStringVariable.json"
-                    },
-                    {
-                        "$ref": "./CompareTimeVariable.json"
-                    },
-                    {
-                        "$ref": "./ItemInInventory.json"
-                    },
-                    {
-                        "$ref": "./IsDestroyed.json"
-                    },
-                    {
-                        "$ref": "./IsGrabbed.json"
-                    }
-                ]
+                "$ref": "./Conditions.json"
             }
         }
     }

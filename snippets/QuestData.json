@@ -165,6 +165,16 @@
             "}"
         ]
     },
+    "LevelOption": {
+        "scope": "json",
+        "prefix": "leveloption",
+        "body": [
+            "{",
+            "\t\"name\": \"${1|PlayerSpawnerId,PlayerContainerId,PlayerVisibilityDistance,Difficulty,DungeonLength,DungeonRoom,Seed|}\",",
+            "\t\"value\": \"${2:boat}\"",
+            "}"
+        ]
+    },
     "Sequence": {
         "scope": "json",
         "prefix": "sequence",

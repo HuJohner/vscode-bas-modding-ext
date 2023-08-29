@@ -54,65 +54,7 @@
         "interactions": {
             "type": "array",
             "items": {
-                "anyOf": [
-                    {
-                        "$ref": "./interaction/Dialog.json"
-                    },
-                    {
-                        "$ref": "./interaction/SetQuestState.json"
-                    },
-                    {
-                        "$ref": "./interaction/DisablePoi.json"
-                    },
-                    {
-                        "$ref": "./interaction/Wave.json"
-                    },
-                    {
-                        "$ref": "./interaction/SetBoolVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/SetIntVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/SetFloatVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/SetStringVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/SetTimeVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/IncrementIntVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/IncrementFloatVariable.json"
-                    },
-                    {
-                        "$ref": "./interaction/MoveTo.json"
-                    },
-                    {
-                        "$ref": "./interaction/JumpTo.json"
-                    },
-                    {
-                        "$ref": "./interaction/Effect.json"
-                    },
-                    {
-                        "$ref": "./interaction/Speak.json"
-                    },
-                    {
-                        "$ref": "./interaction/Handshake.json"
-                    },
-                    {
-                        "$ref": "./interaction/ReceiveItem.json"
-                    },
-                    {
-                        "$ref": "./interaction/GiveItem.json"
-                    },
-                    {
-                        "$ref": "./interaction/Animation.json"
-                    }
-                ]
+                "$ref": "./interaction/Interactions.json"
             },
             "minItems": 1
         }

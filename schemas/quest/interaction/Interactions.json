@@ -1,0 +1,63 @@
+{
+    "id": "./schemas/quest/interaction/Interactions.json",
+    "type": "object",
+    "anyOf": [
+        {
+            "$ref": "./Dialog.json"
+        },
+        {
+            "$ref": "./SetQuestState.json"
+        },
+        {
+            "$ref": "./DisablePoi.json"
+        },
+        {
+            "$ref": "./Wave.json"
+        },
+        {
+            "$ref": "./SetBoolVariable.json"
+        },
+        {
+            "$ref": "./SetIntVariable.json"
+        },
+        {
+            "$ref": "./SetFloatVariable.json"
+        },
+        {
+            "$ref": "./SetStringVariable.json"
+        },
+        {
+            "$ref": "./SetTimeVariable.json"
+        },
+        {
+            "$ref": "./IncrementIntVariable.json"
+        },
+        {
+            "$ref": "./IncrementFloatVariable.json"
+        },
+        {
+            "$ref": "./MoveTo.json"
+        },
+        {
+            "$ref": "./JumpTo.json"
+        },
+        {
+            "$ref": "./Effect.json"
+        },
+        {
+            "$ref": "./Speak.json"
+        },
+        {
+            "$ref": "./Handshake.json"
+        },
+        {
+            "$ref": "./ReceiveItem.json"
+        },
+        {
+            "$ref": "./GiveItem.json"
+        },
+        {
+            "$ref": "./Animation.json"
+        }
+    ]
+}

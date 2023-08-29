@@ -1,0 +1,45 @@
+{
+    "id": "./schemas/quest/condition/Conditions.json",
+    "type": "object",
+    "anyOf": [
+        {
+            "$ref": "./And.json"
+        },
+        {
+            "$ref": "./Or.json"
+        },
+        {
+            "$ref": "./Not.json"
+        },
+        {
+            "$ref": "./QuestState.json"
+        },
+        {
+            "$ref": "./CompareBoolVariable.json"
+        },
+        {
+            "$ref": "./CompareIntVariable.json"
+        },
+        {
+            "$ref": "./CompareFloatVariable.json"
+        },
+        {
+            "$ref": "./CompareStringVariable.json"
+        },
+        {
+            "$ref": "./CompareTimeVariable.json"
+        },
+        {
+            "$ref": "./InZone.json"
+        },
+        {
+            "$ref": "./ItemInInventory.json"
+        },
+        {
+            "$ref": "./IsDestroyed.json"
+        },
+        {
+            "$ref": "./IsGrabbed.json"
+        }
+    ]
+}

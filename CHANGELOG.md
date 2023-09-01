@@ -4,6 +4,10 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.0.8] - 2023-09-01
+
+- fixed missing conditions in interactions
+
 ## [0.0.7] - 2023-08-29
 
 - fixed sequence conditions

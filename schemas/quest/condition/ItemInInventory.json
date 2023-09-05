@@ -15,6 +15,26 @@
             "type": "integer",
             "minimum": 1,
             "default": 1
+        },
+        "checkHolders": {
+            "type": "boolean",
+            "default": true
+        },
+        "checkInventory": {
+            "type": "boolean",
+            "default": true
+        },
+        "checkLeftHand": {
+            "type": "boolean",
+            "default": true
+        },
+        "checkRightHand": {
+            "type": "boolean",
+            "default": true
+        },
+        "checkArmour": {
+            "type": "boolean",
+            "default": true
         }
     },
     "required": [

@@ -334,7 +334,12 @@
             "{",
             "\t\"\\$type\": \"QuestFramework.Conditions.ItemInInventory, QuestFramework\",",
             "\t\"itemId\": \"${1:FoodApple}\",",
-            "\t\"count\": ${2:1}",
+            "\t\"count\": ${2:1},",
+            "\t\"checkHolders\": ${3|true,false|},",
+            "\t\"checkInventory\": ${4|true,false|},",
+            "\t\"checkLeftHand\": ${5|true,false|},",
+            "\t\"checkRightHand\": ${6|true,false|},",
+            "\t\"checkArmour\": ${7|true,false|}",
             "}"
         ]
     },

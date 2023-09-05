@@ -7,6 +7,12 @@
             "type": "string",
             "const": "QuestFramework.POI.GoToCoord, QuestFramework"
         },
+        "name": {
+            "type": "string"
+        },
+        "hide": {
+            "type": "boolean"
+        },
         "condition": {
             "anyOf": [
                 {

@@ -1,0 +1,48 @@
+{
+    "id": "./schemas/quest/interaction/TeleportPlayer.json",
+    "title": "TeleportPlayer interaction",
+    "description": "A TeleportPlayer interaction to teleport the player to a position",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.TeleportPlayer, QuestFramework"
+        },
+        "areaId": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "position": {
+            "$ref": "../../Vector3.json"
+        },
+        "rotationY": {
+            "type": "number"
+        },
+        "useFading": {
+            "type": "boolean",
+            "default": true
+        },
+        "fadeInDuration": {
+            "type": "number",
+            "default": 1.0
+        },
+        "fadeOutDuration": {
+            "type": "number",
+            "default": 1.0
+        }
+    },
+    "required": [
+        "position",
+        "rotationY"
+    ]
+}

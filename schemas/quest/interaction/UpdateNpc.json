@@ -1,0 +1,76 @@
+{
+    "id": "./schemas/quest/interaction/UpdateNpc.json",
+    "title": "UpdateNpc interaction",
+    "description": "A UpdateNpc interaction to update values of an NPC",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.UpdateNpc, QuestFramework"
+        },
+        "factionId": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "integer"
+                }
+            ]
+        },
+        "containerId": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "brainId": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "failQuestOnKill": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "disablePoiOnKill": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "despawnOnInvalid": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

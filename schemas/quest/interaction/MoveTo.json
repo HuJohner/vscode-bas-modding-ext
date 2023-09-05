@@ -12,6 +12,9 @@
         "$type": {
             "const": "QuestFramework.Interactions.MoveTo, QuestFramework"
         },
+        "areaId": {
+            "type": "string"
+        },
         "position": {
             "$ref": "../../Vector3.json"
         },

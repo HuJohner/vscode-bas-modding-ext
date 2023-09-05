@@ -7,6 +7,12 @@
             "type": "string",
             "const": "QuestFramework.POI.Destruction, QuestFramework"
         },
+        "name": {
+            "type": "string"
+        },
+        "hide": {
+            "type": "boolean"
+        },
         "condition": {
             "anyOf": [
                 {
@@ -48,6 +54,9 @@
                 "AnyExcept"
             ]
         },
+        "itemVariableQuestId": {
+            "type": "string"
+        },
         "itemVariableName": {
             "type": "string"
         },
@@ -64,6 +73,9 @@
                 "NoneExcept",
                 "AnyExcept"
             ]
+        },
+        "creatureVariableQuestId": {
+            "type": "string"
         },
         "creatureVariableName": {
             "type": "string"
@@ -84,12 +96,14 @@
         {
             "required": [
                 "creatureIds",
+                "creatureVariableQuestId",
                 "creatureVariableName"
             ]
         },
         {
             "required": [
                 "itemIds",
+                "itemVariableQuestId",
                 "itemVariableName"
             ]
         }

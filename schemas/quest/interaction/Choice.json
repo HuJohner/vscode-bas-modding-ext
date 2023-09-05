@@ -1,0 +1,47 @@
+{
+    "id": "./schemas/quest/interaction/Choice.json",
+    "title": "Choice interaction",
+    "description": "A Choice interaction to open a menu of options",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.Choice, QuestFramework"
+        },
+        "positionOffset": {
+            "$ref": "../../Vector3.json"
+        },
+        "options": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string"
+                    },
+                    "interaction": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "./Interactions.json"
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "text"
+                ]
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "options"
+    ]
+}

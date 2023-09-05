@@ -14,6 +14,9 @@
         },
         "dialogId": {
             "type": "string"
+        },
+        "text": {
+            "type": "string"
         }
     },
     "required": [

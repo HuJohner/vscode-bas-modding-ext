@@ -7,6 +7,12 @@
             "type": "string",
             "const": "QuestFramework.POI.GoToLevel, QuestFramework"
         },
+        "name": {
+            "type": "string"
+        },
+        "hide": {
+            "type": "boolean"
+        },
         "condition": {
             "anyOf": [
                 {

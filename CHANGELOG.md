@@ -4,6 +4,10 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.1.0] - 2023-09-05
+
+- updated to support Quest Framework v1.1.0
+
 ## [0.0.8] - 2023-09-01
 
 - fixed missing conditions in interactions

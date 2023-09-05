@@ -1,0 +1,26 @@
+{
+    "id": "./schemas/quest/interaction/SetRandomIntVariable.json",
+    "title": "SetRandomIntVariable interaction",
+    "description": "A SetRandomIntVariable interaction to set an integer variable to a random value in a range",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetRandomIntVariable, QuestFramework"
+        },
+        "min": {
+            "type": "integer"
+        },
+        "max": {
+            "type": "integer"
+        }
+    },
+    "required": [
+        "min",
+        "max"
+    ]
+}

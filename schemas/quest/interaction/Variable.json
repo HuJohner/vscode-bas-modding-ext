@@ -7,11 +7,15 @@
         }
     ],
     "properties": {
+        "questId": {
+            "type": "string"
+        },
         "variableName": {
             "type": "string"
         }
     },
     "required": [
+        "questId",
         "variableName"
     ]
 }

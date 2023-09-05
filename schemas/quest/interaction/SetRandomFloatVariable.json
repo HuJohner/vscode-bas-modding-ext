@@ -1,0 +1,26 @@
+{
+    "id": "./schemas/quest/interaction/SetRandomFloatVariable.json",
+    "title": "SetRandomFloatVariable interaction",
+    "description": "A SetRandomFloatVariable interaction to set a float variable to a random value in a range",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Variable.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetRandomFloatVariable, QuestFramework"
+        },
+        "min": {
+            "type": "number"
+        },
+        "max": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "min",
+        "max"
+    ]
+}

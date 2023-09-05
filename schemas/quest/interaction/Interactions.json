@@ -58,6 +58,24 @@
         },
         {
             "$ref": "./Animation.json"
+        },
+        {
+            "$ref": "./Choice.json"
+        },
+        {
+            "$ref": "./UpdateNpc.json"
+        },
+        {
+            "$ref": "./SetRandomIntVariable.json"
+        },
+        {
+            "$ref": "./SetRandomFloatVariable.json"
+        },
+        {
+            "$ref": "./TeleportPlayer.json"
+        },
+        {
+            "$ref": "./StopInteraction.json"
         }
     ]
 }

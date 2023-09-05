@@ -1,0 +1,16 @@
+{
+    "id": "./schemas/quest/interaction/StopInteraction.json",
+    "title": "Stop interaction",
+    "description": "A stop interaction to stop the flow of interactions",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.StopInteraction, QuestFramework"
+        }
+    }
+}

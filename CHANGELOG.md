@@ -4,6 +4,10 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.1.2] - 2023-09-22
+
+- added new properties on GoToLevel
+
 ## [0.1.1] - 2023-09-05
 
 - added missing properties on ItemInInventory condition

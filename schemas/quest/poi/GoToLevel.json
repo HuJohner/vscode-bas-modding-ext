@@ -55,6 +55,12 @@
         "text": {
             "type": "string"
         },
+        "destinationPosition": {
+            "$ref": "../../Vector3.json"
+        },
+        "destinationRotationY": {
+            "type": "number"
+        },
         "sequences": {
             "type": "array",
             "items": {

@@ -13,6 +13,9 @@
         "hide": {
             "type": "boolean"
         },
+        "hideOnMap": {
+            "type": "boolean"
+        },
         "condition": {
             "anyOf": [
                 {
@@ -60,6 +63,9 @@
         },
         "destinationRotationY": {
             "type": "number"
+        },
+        "saveContainer ": {
+            "type": "boolean"
         },
         "sequences": {
             "type": "array",

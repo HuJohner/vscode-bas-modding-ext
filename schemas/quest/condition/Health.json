@@ -1,0 +1,26 @@
+{
+    "id": "./schemas/quest/condition/Health.json",
+    "title": "Health condition",
+    "description": "A Health condition to validate how the NPC's health compares to a value",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.Health, QuestFramework"
+        },
+        "value": {
+            "type": "number"
+        },
+        "comparisonType": {
+            "type": "string",
+            "default": "Equal",
+            "enum": [
+                "LessThan",
+                "Equal",
+                "GreaterThan"
+            ]
+        }
+    },
+    "required": [
+        "value"
+    ]
+}

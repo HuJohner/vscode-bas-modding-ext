@@ -1,0 +1,26 @@
+{
+    "id": "./schemas/quest/interaction/SetCurrency.json",
+    "title": "SetCurrency interaction",
+    "description": "A SetCurrency interaction to set the Player's currency to a value",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.SetCurrency, QuestFramework"
+        },
+        "currencyType": {
+            "type": "string"
+        },
+        "value": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "currencyType",
+        "value"
+    ]
+}

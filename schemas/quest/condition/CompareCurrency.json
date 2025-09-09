@@ -1,0 +1,30 @@
+{
+    "id": "./schemas/quest/condition/CompareCurrency.json",
+    "title": "CompareCurrency condition",
+    "description": "A CompareCurrency condition to validate how the Player's currency compares to a value",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Conditions.CompareCurrency, QuestFramework"
+        },
+        "currencyType": {
+            "type": "string"
+        },
+        "value": {
+            "type": "number"
+        },
+        "comparisonType": {
+            "type": "string",
+            "default": "Equal",
+            "enum": [
+                "LessThan",
+                "Equal",
+                "GreaterThan"
+            ]
+        }
+    },
+    "required": [
+        "currencyType",
+        "value"
+    ]
+}

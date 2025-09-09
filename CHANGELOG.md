@@ -4,6 +4,11 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.2.0] - 2025-09-09
+
+- updated to 1.0
+- updated to support Quest Framework v2.1.1
+
 ## [0.1.2] - 2023-09-22
 
 - added new properties on GoToLevel

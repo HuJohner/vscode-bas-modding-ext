@@ -36,10 +36,22 @@
             "$ref": "./ItemInInventory.json"
         },
         {
+            "$ref": "./CompareCurrency.json"
+        },
+        {
             "$ref": "./IsDestroyed.json"
         },
         {
             "$ref": "./IsGrabbed.json"
+        },
+        {
+            "$ref": "./BrainState.json"
+        },
+        {
+            "$ref": "./Detected.json"
+        },
+        {
+            "$ref": "./Health.json"
         }
     ]
 }

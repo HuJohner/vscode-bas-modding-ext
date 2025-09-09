@@ -1,0 +1,26 @@
+{
+    "id": "./schemas/quest/condition/BrainState.json",
+    "title": "BrainState condition",
+    "description": "An BrainState condition to validate the NPC's brain state",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.BrainState, QuestFramework"
+        },
+        "state": {
+            "type": "string",
+            "default": "Idle",
+            "enum": [
+                "Idle",
+                "Follow",
+                "Patrol",
+                "Investigate",
+                "Alert",
+                "Combat",
+                "Grappled",
+                "Custom"
+            ]
+        }
+    }
+}

@@ -19,7 +19,10 @@
             "type": "integer"
         },
         "spawnerName": {
-            "type": "string"
+            "type": [
+                "string",
+                "null"
+            ]
         },
         "spawns": {
             "type": "array",

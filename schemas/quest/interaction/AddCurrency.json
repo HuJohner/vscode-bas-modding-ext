@@ -1,0 +1,29 @@
+{
+    "id": "./schemas/quest/interaction/AddCurrency.json",
+    "title": "AddCurrency interaction",
+    "description": "A AddCurrency interaction to add a value to the Player's currency",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "./Interaction.json"
+        }
+    ],
+    "properties": {
+        "$type": {
+            "const": "QuestFramework.Interactions.AddCurrency, QuestFramework"
+        },
+        "currencyType": {
+            "type": "string"
+        },
+        "value": {
+            "type": "number"
+        },
+        "checkCanAfford": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "currencyType",
+        "value"
+    ]
+}

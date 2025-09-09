@@ -1,0 +1,12 @@
+{
+    "id": "./schemas/quest/condition/Detected.json",
+    "title": "Detected condition",
+    "description": "An Detected condition to validate if an NPC's alertness level exceeds the threshold",
+    "type": "object",
+    "properties": {
+        "$type": {
+            "type": "string",
+            "const": "QuestFramework.Conditions.Detected, QuestFramework"
+        }
+    }
+}

@@ -33,6 +33,9 @@
         "finishAnimationDataId": {
             "type": "string",
             "default": "HumanReceiveItemFinish"
+        },
+        "transferOwnership": {
+            "type": "boolean"
         }
     },
     "required": [

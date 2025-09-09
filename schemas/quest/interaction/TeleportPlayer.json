@@ -13,13 +13,9 @@
             "const": "QuestFramework.Interactions.TeleportPlayer, QuestFramework"
         },
         "areaId": {
-            "anyOf": [
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                }
+            "type": [
+                "string",
+                "null"
             ]
         },
         "position": {

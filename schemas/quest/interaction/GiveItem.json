@@ -36,6 +36,9 @@
         "cancelAnimationDataId": {
             "type": "string",
             "default": "HumanStoreItem"
+        },
+        "transferOwnership": {
+            "type": "boolean"
         }
     },
     "required": [

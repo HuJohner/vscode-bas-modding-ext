@@ -13,6 +13,9 @@
         "hide": {
             "type": "boolean"
         },
+        "hideOnMap": {
+            "type": "boolean"
+        },
         "condition": {
             "anyOf": [
                 {

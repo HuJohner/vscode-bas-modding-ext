@@ -13,6 +13,9 @@
         "hide": {
             "type": "boolean"
         },
+        "hideOnMap": {
+            "type": "boolean"
+        },
         "condition": {
             "anyOf": [
                 {
@@ -55,6 +58,10 @@
             "default": true
         },
         "despawnOnInvalid": {
+            "type": "boolean",
+            "default": false
+        },
+        "transferOwnership ": {
             "type": "boolean",
             "default": false
         },

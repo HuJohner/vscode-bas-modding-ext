@@ -76,6 +76,12 @@
         },
         {
             "$ref": "./StopInteraction.json"
+        },
+        {
+            "$ref": "./SetCurrency.json"
+        },
+        {
+            "$ref": "./AddCurrency.json"
         }
     ]
 }

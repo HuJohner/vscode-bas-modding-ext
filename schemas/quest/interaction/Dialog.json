@@ -14,6 +14,14 @@
         },
         "text": {
             "type": "string"
+        },
+        "npcTurnToPlayer": {
+            "type": "boolean",
+            "default": true
+        },
+        "npcLookAtPlayer": {
+            "type": "boolean",
+            "default": true
         }
     },
     "required": [

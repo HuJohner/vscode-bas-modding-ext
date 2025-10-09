@@ -11,6 +11,14 @@
     "properties": {
         "$type": {
             "const": "QuestFramework.Interactions.Handshake, QuestFramework"
+        },
+        "turnToPlayer": {
+            "type": "boolean",
+            "default": true
+        },
+        "lookAtPlayer": {
+            "type": "boolean",
+            "default": true
         }
     }
 }

@@ -43,6 +43,10 @@
             "type": "number",
             "default": 2.5
         },
+        "cullDistance": {
+            "type": "number",
+            "default": 0.0
+        },
         "sequences": {
             "type": "array",
             "items": {

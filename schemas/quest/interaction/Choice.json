@@ -39,6 +39,14 @@
                 ]
             },
             "minItems": 1
+        },
+        "npcTurnToPlayer": {
+            "type": "boolean",
+            "default": true
+        },
+        "npcLookAtPlayer": {
+            "type": "boolean",
+            "default": true
         }
     },
     "required": [

@@ -5,7 +5,7 @@ import * as path from 'path';
 export class CatalogDataCache {
     private static uriCache = new Map<string, vscode.Uri>();
     private static reverseUriCache = new Map<vscode.Uri, (string | undefined)[]>();
-    private static idCache = new Map<string, string[]>();
+    private static valuesCache = new Map<string, string[]>();
     private static watcher: vscode.FileSystemWatcher | undefined;
 
     static async initialize(context: vscode.ExtensionContext) {
@@ -25,7 +25,7 @@ export class CatalogDataCache {
     private static async buildCache() {
         CatalogDataCache.uriCache.clear();
         CatalogDataCache.reverseUriCache.clear();
-        CatalogDataCache.idCache.clear();
+        CatalogDataCache.valuesCache.clear();
 
         const config = vscode.workspace.getConfiguration('bas-modding');
         const sdkPath = config.get<string>('sdkPath');
@@ -91,16 +91,16 @@ export class CatalogDataCache {
                 CatalogDataCache.reverseUriCache.set(uri, [cacheKey, generalCacheKey]);
 
                 if (generalType) {
-                    if (!CatalogDataCache.idCache.has(generalType)) {
-                        CatalogDataCache.idCache.set(generalType, [json.id]);
+                    if (!CatalogDataCache.valuesCache.has(generalType)) {
+                        CatalogDataCache.valuesCache.set(generalType, [json.id]);
                     } else {
-                        CatalogDataCache.idCache.get(generalType)?.push(json.id);
+                        CatalogDataCache.valuesCache.get(generalType)?.push(json.id);
                     }
                 } else {
-                    if (!CatalogDataCache.idCache.has(json.$type)) {
-                        CatalogDataCache.idCache.set(json.$type, [json.id]);
+                    if (!CatalogDataCache.valuesCache.has(json.$type)) {
+                        CatalogDataCache.valuesCache.set(json.$type, [json.id]);
                     } else {
-                        CatalogDataCache.idCache.get(json.$type)?.push(json.id);
+                        CatalogDataCache.valuesCache.get(json.$type)?.push(json.id);
                     }
                 }  
             }
@@ -117,8 +117,8 @@ export class CatalogDataCache {
         return CatalogDataCache.reverseUriCache.get(uri);
     }
 
-    static getIds(typeValue: string): string[] | undefined {
-        return CatalogDataCache.idCache.get(typeValue);
+    static getValues(typeValue: string): string[] | undefined {
+        return CatalogDataCache.valuesCache.get(typeValue);
     }
 
     private static setupFileSystemWatcher(context: vscode.ExtensionContext) {
@@ -138,10 +138,10 @@ export class CatalogDataCache {
                 CatalogDataCache.reverseUriCache.delete(uri);
 
                 const [type, id] = (keys[1] ? keys[1] : keys[0]).split('.');
-                const array = CatalogDataCache.idCache.get(type);
-                const index = array?.indexOf(id) ?? -1;
+                const values = CatalogDataCache.valuesCache.get(type);
+                const index = values?.indexOf(id) ?? -1;
                 if (index > -1) {
-                    array?.splice(index, 1);
+                    values?.splice(index, 1);
                 }
                 
                 CatalogDataCache.parseFileForDefinitions(uri);

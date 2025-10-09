@@ -12,7 +12,7 @@ export class CatalogDataCompletionItemProvider implements vscode.CompletionItemP
         }
         
         const [catalogType, _] = catalogTypeAndValue;
-        const ids = CatalogDataCache.getIds(catalogType);
+        const ids = CatalogDataCache.getValues(catalogType);
         
         return ids?.map(id => new vscode.CompletionItem(id, vscode.CompletionItemKind.Value));
     }

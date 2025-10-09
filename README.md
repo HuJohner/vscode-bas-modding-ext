@@ -5,9 +5,11 @@
 
 1. New Mod context command to create a folder and manifest file.
 
-2. Snippets to easily create a quest.
+2. Definition linking and auto-completion suggestions for CatalogData
 
-2. JSON validation for Quests.
+3. Snippets to easily create a quest.
+
+4. JSON validation for Quests.
 
 ## Requirements
 

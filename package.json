@@ -3,7 +3,7 @@
   "displayName": "BaS Modding",
   "description": "Makes the creation of Blade & Sorcery Mods easier.",
   "icon": "images/icon.png",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "HuJohner",
   "publisher": "HuJohner",
   "homepage": "https://www.youtube.com/c/HuJohner",
@@ -32,6 +32,12 @@
           "scope": "resource",
           "default": "",
           "description": "Value to use to replace <author> variable."
+        },
+        "bas-modding.sdkPath": {
+          "type": "string",
+          "scope": "resource",
+          "default": "",
+          "description": "Path to your local SDK."
         }
       }
     },
@@ -89,5 +95,8 @@
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
     "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
   }
 }

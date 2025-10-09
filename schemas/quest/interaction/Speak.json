@@ -17,6 +17,14 @@
         },
         "text": {
             "type": "string"
+        },
+        "turnToPlayer": {
+            "type": "boolean",
+            "default": true
+        },
+        "lookAtPlayer": {
+            "type": "boolean",
+            "default": true
         }
     },
     "required": [

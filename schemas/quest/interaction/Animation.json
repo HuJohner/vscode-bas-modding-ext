@@ -17,6 +17,14 @@
                 "string",
                 "null"
             ]
+        },
+        "turnToPlayer": {
+            "type": "boolean",
+            "default": false
+        },
+        "lookAtPlayer": {
+            "type": "boolean",
+            "default": false
         }
     }
 }

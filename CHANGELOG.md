@@ -4,6 +4,13 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.3.0] - 2025-10-09
+
+- added definition linking for catalog data
+- added auto completion suggestions for catalog data
+- updated to support Quest Framework v2.2.0
+- upgraded vulnerable packages
+
 ## [0.2.0] - 2025-09-09
 
 - updated to 1.0

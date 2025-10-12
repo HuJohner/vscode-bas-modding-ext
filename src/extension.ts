@@ -18,6 +18,21 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(vscode.languages.registerDefinitionProvider({ language: 'json', scheme: 'file' }, new CatalogDataDefinitionProvider()));
 	context.subscriptions.push(vscode.languages.registerCompletionItemProvider({ language: 'json', scheme: 'file' }, new CatalogDataCompletionItemProvider()));
+
+	const config = vscode.workspace.getConfiguration('files');
+	const readonlyInclude: { [key: string]: boolean } = config.get('readonlyInclude', {});
+	const pattern = '**/BuildStaging/Catalogs/Default/**/*.json';
+	if (!readonlyInclude[pattern]) {
+		readonlyInclude[pattern] = true;
+		config.update(
+			'readonlyInclude',
+			readonlyInclude,
+			vscode.ConfigurationTarget.Workspace
+		).then(
+			() => console.log('Successfully updated files.readonlyInclude'),
+			(error) => console.error('Failed to update files.readonlyInclude:', error)
+		);
+	}
 }
 
 export function deactivate() {

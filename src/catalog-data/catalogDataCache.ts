@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import * as fs from 'fs/promises';
+import * as fs from 'fs';
 import * as path from 'path';
 
 export class CatalogDataCache {
@@ -47,7 +47,7 @@ export class CatalogDataCache {
     }
 
     private static async findFiles(dir: string): Promise<string[]> {
-        const entries = await fs.readdir(dir, { withFileTypes: true });
+        const entries = await fs.promises.readdir(dir, { withFileTypes: true });
         const files: string[] = [];
         for (const entry of entries) {
             const fullPath = path.join(dir, entry.name);
@@ -62,7 +62,7 @@ export class CatalogDataCache {
 
     private static async parseFileForDefinitions(uri: vscode.Uri) {
         try {
-            const content = await fs.readFile(uri.fsPath, 'utf-8');
+            const content = await fs.promises.readFile(uri.fsPath, 'utf-8');
             
             const json = JSON.parse(content);
             if (!json.$type || !json.id) {
@@ -143,7 +143,8 @@ export class CatalogDataCache {
                 if (index > -1) {
                     values?.splice(index, 1);
                 }
-                
+            }
+            if (fs.existsSync(uri.fsPath)) {
                 CatalogDataCache.parseFileForDefinitions(uri);
             }
         };

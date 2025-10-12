@@ -4,6 +4,11 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.3.1] - 2025-10-12
+
+- fixed catalog data cache not updating when creating new files
+- default jsons from SDK are now readonly
+
 ## [0.3.0] - 2025-10-09
 
 - added definition linking for catalog data

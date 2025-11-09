@@ -1,15 +1,37 @@
 import * as jsonc from 'jsonc-parser';
 
 export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => string | undefined>([
+    [ 'ThunderRoad.AnimationData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.AnimationData, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.AreaCollectionDungeon, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.AreaCollectionDungeon, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.AreaCollectionDungeon+AreaTableIdContainer, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['dataId', 'ThunderRoad.AreaTable, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.IAreaBlueprintGenerator+IAreaBlueprintGeneratorIdContainer, ThunderRoad', areaBlueprintGeneratorMapper ],
+    [ 'ThunderRoad.AreaCollectionFixLayout, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.AreaCollectionFixLayout, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.AreaConnectionTypeData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.AreaConnectionTypeData, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.AreaData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.AreaData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.AreaData+AreaConnectionTypeIdContainer, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['dataId', 'ThunderRoad.AreaConnectionTypeData, ThunderRoad']
     ])) ],
+    [ 'ThunderRoad.AreaTable, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.AreaTable, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.BehaviorTreeData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.BehaviorTreeData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.BrainData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['treeID', 'ThunderRoad.BehaviorTreeData, ThunderRoad']
+        ['id', 'ThunderRoad.BrainData, ThunderRoad'],
+        ['treeID', 'ThunderRoad.BehaviorTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.AI.ChildTreeNode, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['childTreeID', 'ThunderRoad.BehaviorTreeData, ThunderRoad']
@@ -53,12 +75,18 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['sellAnimationId', 'ThunderRoad.AnimationData, ThunderRoad'],
         ['angryAnimationId', 'ThunderRoad.AnimationData, ThunderRoad'],
     ])) ],
+    [ 'ThunderRoad.ColliderGroupData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.ColliderGroupData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.ColliderGroupData+Modifier', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['spellIds', 'ThunderRoad.SpellCastData, ThunderRoad'] // technically SpellCastCharge
     ])) ],
     [ 'ThunderRoad.ColliderGroupData+CustomSpellEffect, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['spellId', 'ThunderRoad.SpellCastData, ThunderRoad'],// technically SpellCastCharge
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
+    ])) ],
+    [ 'ThunderRoad.ContainerData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.ContainerData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.ItemContent, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['referenceID', 'ThunderRoad.ItemData, ThunderRoad']
@@ -73,6 +101,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['referenceID', 'ThunderRoad.SpellCastData, ThunderRoad']// technically SpellData
     ])) ],
     [ 'ThunderRoad.CreatureData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.CreatureData, ThunderRoad'],
         ['containerID', 'ThunderRoad.ContainerData, ThunderRoad'],
         ['brainId', 'ThunderRoad.BrainData, ThunderRoad'],
         ['focusReadyEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -105,15 +134,29 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['sliceChildEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['penetrationDeepEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
+    [ 'ThunderRoad.CreatureTable, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.CreatureTable, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.CreatureTable+Drop, ThunderRoad', creatureTableDropMapper ],
+    [ 'ThunderRoad.DamageModifierData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.DamageModifierData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.DamageModifierData+Collision, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['sourceMaterialIds', 'ThunderRoad.MaterialData, ThunderRoad'],
         ['targetMaterialIds', 'ThunderRoad.MaterialData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.DamagerData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['damageModifierId', 'ThunderRoad.DamageModifierData, ThunderRoad']
+        ['id', 'ThunderRoad.DamagerData, ThunderRoad'],
+        ['damageModifierId', 'ThunderRoad.DamageModifierData, ThunderRoad'],
+    ])) ],
+    [ 'ThunderRoad.EffectGroupData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.EffectGroupData, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.EffectData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.EffectData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.EnemyConfig, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.EnemyConfig, ThunderRoad'],
         ['patrolMixId', 'ThunderRoad.CreatureTable, ThunderRoad'],
         ['patrolMeleeId', 'ThunderRoad.CreatureTable, ThunderRoad'],
         ['patrolRangedId', 'ThunderRoad.CreatureTable, ThunderRoad'],
@@ -139,8 +182,12 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
     [ 'ThunderRoad.EnemyConfig+DescriptionByLevelId, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['levelId', 'ThunderRoad.LevelData, ThunderRoad']
     ])) ],
+    [ 'ThunderRoad.ExpressionData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.ExpressionData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.CrystalHuntGameModeData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['levelHome', 'ThunderRoad.LevelData, ThunderRoad']
+        ['id', 'ThunderRoad.CrystalHuntGameModeData, ThunderRoad'],
+        ['levelHome', 'ThunderRoad.LevelData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.InventoryStart, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['containerID', 'ThunderRoad.ContainerData, ThunderRoad']
@@ -161,20 +208,28 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['LoreFoundSfxID', 'ThunderRoad.EffectData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.SandboxGameModeData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['levelHome', 'ThunderRoad.LevelData, ThunderRoad']
+        ['id', 'ThunderRoad.SandboxGameModeData, ThunderRoad'],
+        ['levelHome', 'ThunderRoad.LevelData, ThunderRoad'],
+    ])) ],
+    [ 'ThunderRoad.HandPoseData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.HandPoseData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.HolderData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.HolderData, ThunderRoad'],
         ['spawnItemID', 'ThunderRoad.ItemData, ThunderRoad'],
         ['itemIds', 'ThunderRoad.ItemData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.HandleRagdollData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['grabEffectId', 'ThunderRoad.EffectData, ThunderRoad']
+        ['id', 'ThunderRoad.HandleRagdollData, ThunderRoad'],
+        ['grabEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.HandleData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['grabEffectId', 'ThunderRoad.EffectData, ThunderRoad']
+        ['id', 'ThunderRoad.HandleData, ThunderRoad'],
+        ['grabEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.ItemData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['iconEffectId', 'ThunderRoad.EffectData, ThunderRoad']
+        ['id', 'ThunderRoad.ItemData, ThunderRoad'],
+        ['iconEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.ItemData+ColliderGroup, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['colliderGroupId', 'ThunderRoad.ColliderGroupData, ThunderRoad']
@@ -208,6 +263,10 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
     [ 'ThunderRoad.ItemModuleWardrobe, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['armorSoundEffectID', 'ThunderRoad.EffectData, ThunderRoad']
     ])) ],
+    [ 'ThunderRoad.KeyboardData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.KeyboardData, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.LevelData, ThunderRoad', levelDataMapper ],
     [ 'ThunderRoad.LevelModuleSurvival, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['firstRewardsContainerID', 'ThunderRoad.ContainerData, ThunderRoad']
     ])) ],
@@ -218,14 +277,17 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
     [ 'ThunderRoad.LevelModuleMusic, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['dynamicMusic', 'ThunderRoad.Music, ThunderRoad']
     ])) ],
-    [ 'ThunderRoad.LevelData, ThunderRoad', levelDataMapper ],
     [ 'ThunderRoad.LevelAreaModule+AreaSpawnerData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['areaCollectionId', 'ThunderRoad.AreaCollection, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.EnemyConfigOption, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['valueList', 'ThunderRoad.EnemyConfig, ThunderRoad']
     ])) ],
+    [ 'ThunderRoad.LiquidHealth, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.LiquidHealth, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.LootConfigData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.LootConfigData, ThunderRoad'],
         ['sideRoomLootTableID', 'ThunderRoad.LootTable, ThunderRoad'],
         ['enemyDropLootTableID', 'ThunderRoad.LootTable, ThunderRoad'],
         ['treasureLootTableID', 'ThunderRoad.LootTable, ThunderRoad'],
@@ -233,15 +295,28 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['altSideRoomLootTableID', 'ThunderRoad.LootTable, ThunderRoad'],
         ['altTreasureLootTableID', 'ThunderRoad.LootTable, ThunderRoad'],
     ])) ],
+    [ 'ThunderRoad.LootTable, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.LootTable, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.LootTable+Drop, ThunderRoad', lootTableDropMapper ],
+    [ 'ThunderRoad.MaterialData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.MaterialData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.EffectBundle, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.MaterialData+Collision, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['targetMaterialIds', 'ThunderRoad.MaterialData, ThunderRoad']
     ])) ],
+    [ 'ThunderRoad.MenuData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.MenuData, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.MusicGroup, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.MusicGroup, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.Music, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['groupsToLoad', 'ThunderRoad.MusicGroup, ThunderRoad']
+        ['id', 'ThunderRoad.Music, ThunderRoad'],
+        ['groupsToLoad', 'ThunderRoad.MusicGroup, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Music+MusicTransition, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['sourceGroup', 'ThunderRoad.MusicGroup, ThunderRoad'],
@@ -256,18 +331,21 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['stingerEffectIdList', 'ThunderRoad.EffectData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.ShopData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['shopKeeperCreatureID', 'ThunderRoad.CreatureData, ThunderRoad']
+        ['id', 'ThunderRoad.ShopData, ThunderRoad'],
+        ['shopKeeperCreatureID', 'ThunderRoad.CreatureData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.ShopData+ShopStockCategory, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['restockTableID', 'ThunderRoad.LootTable, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillTemporalThunder, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillTemporalThunder, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillAirstrike, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillAirstrike, ThunderRoad'],
         ['whooshEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shockwaveEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['playerEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -282,6 +360,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillArcwire, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillArcwire, ThunderRoad'],
         ['arcEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['electrocuteStatusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['arcStaffEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -292,18 +371,21 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillAIModifier, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillAIModifier, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillArcherImbue, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillArcherImbue, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillRicochetThrow, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillRicochetThrow, ThunderRoad'],
         ['returnEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['grabEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -312,12 +394,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillBoostJump, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillBoostJump, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillBruteForce, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillBruteForce, ThunderRoad'],
         ['damagerId', 'ThunderRoad.DamagerData, ThunderRoad'],
         ['materialId', 'ThunderRoad.MaterialData, ThunderRoad'],
         ['karateChopTargetPoseId', 'ThunderRoad.HandPoseData, ThunderRoad'],
@@ -328,6 +412,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.GripCastSkillData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.GripCastSkillData, ThunderRoad'],
         ['spellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -335,36 +420,42 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillChainLightning, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillChainLightning, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillChargeSapping, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillChargeSapping, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillCastSpeed, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillCastSpeed, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillCombatFocus, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillCombatFocus, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillConflagration, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillConflagration, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillDetonationSwarm, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillDetonationSwarm, ThunderRoad'],
         ['remoteDetonationSkillId', 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad'],
         ['burningStatusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -373,6 +464,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillDilationBubble, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillDilationBubble, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -380,6 +472,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillDiscombobulate, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillDiscombobulate, ThunderRoad'],
         ['bonkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['bonkAltEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -388,6 +481,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillDiveStrike, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillDiveStrike, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -395,12 +489,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillElectromagnetism, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillElectromagnetism, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillEmergencyExit, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillEmergencyExit, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -409,6 +505,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillFanTheFlames, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillFanTheFlames, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['statusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -417,6 +514,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillFeatherFall, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillFeatherFall, ThunderRoad'],
         ['hoverEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -424,6 +522,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderThunderRoad.Skill.Spell.SkillFireballRicochet, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderThunderRoad.Skill.Spell.SkillFireballRicochet, ThunderRoad'],
         ['spellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -432,6 +531,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillFireSapping, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillFireSapping, ThunderRoad'],
         ['spellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['statusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -440,24 +540,28 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillFlykick, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillFlykick, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillFocusedReflexes, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillFocusedReflexes, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillForceChoke, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillForceChoke, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillSpellPunch, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillSpellPunch, ThunderRoad'],
         ['baseImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['spellImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['flourishEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -469,6 +573,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillInfernoStaff, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillInfernoStaff, ThunderRoad'],
         ['flamethrowerEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['burningId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -477,6 +582,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillGravityHammer, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillGravityHammer, ThunderRoad'],
         ['whooshEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -484,6 +590,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillSapStatusApplier, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillSapStatusApplier, ThunderRoad'],
         ['spellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['statusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -492,6 +599,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillHeatwave, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillHeatwave, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['statusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -500,6 +608,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillHeavyFirepower, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillHeavyFirepower, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -507,12 +616,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillFireballRedirection, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillFireballRedirection, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillHyperFocus, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillHyperFocus, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['handEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -521,6 +632,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillBurning, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillBurning, ThunderRoad'],
         ['statusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['ignitionBlockedMaterials', 'ThunderRoad.MaterialData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -529,6 +641,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillIgnitionBurst, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillIgnitionBurst, ThunderRoad'],
         ['remoteDetonationSkillId', 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad'],
         ['burningStatusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -537,6 +650,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillImpactPulse, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillImpactPulse, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -544,6 +658,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillGravityDecapitate, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillGravityDecapitate, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -551,12 +666,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillIntimidation, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillIntimidation, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillCharger, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillCharger, ThunderRoad'],
         ['linesEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shoveEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['stepEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -566,24 +683,28 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillHoverSlam, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillHoverSlam, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillCreatureControl, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillCreatureControl, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillMassReduction, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillMassReduction, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillMeleeImbue, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillMeleeImbue, ThunderRoad'],
         ['spellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -591,6 +712,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillMightyKick, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillMightyKick, ThunderRoad'],
         ['kickEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -598,6 +720,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillMoltenArc, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillMoltenArc, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -605,12 +728,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillOvercharge, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillOvercharge, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellMerge.SpellMergeMoltenBeam, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellMerge.SpellMergeMoltenBeam, ThunderRoad'],
         ['beamEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['trailEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['imbueSpellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
@@ -628,12 +753,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillPrecisionFocus, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillPrecisionFocus, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillRangedExpert, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillRangedExpert, ThunderRoad'],
         ['pierceEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -641,6 +768,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad'],
         ['explosionEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -648,6 +776,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillRepellingBurst, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillRepellingBurst, ThunderRoad'],
         ['skillRemoteDetonationId', 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -655,12 +784,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillRipAndTear, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillRipAndTear, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillRiptide, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillRiptide, ThunderRoad'],
         ['tetherEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['grabEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['throwEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -671,6 +802,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillSpellPunch, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillSpellPunch, ThunderRoad'],
         ['baseImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['spellImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['flourishEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -682,6 +814,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillSecondWind, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillSecondWind, ThunderRoad'],
         ['startEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['loopEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -690,6 +823,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillShockParry, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillShockParry, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -697,18 +831,21 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillShockTrip, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillShockTrip, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillImprovedStealth, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillImprovedStealth, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellMerge.SpellMergeGravnado, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellMerge.SpellMergeGravnado, ThunderRoad'],
         ['tornadoId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['previewEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['previewLoopEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -728,18 +865,21 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillStaggerThrow, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillStaggerThrow, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillStaticDisarm, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillStaticDisarm, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellMerge.SpellMergeNeutronCore, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellMerge.SpellMergeNeutronCore, ThunderRoad'],
         ['meteorEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['meteorExplosionEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['meteorItemId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -758,18 +898,21 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillTeleSpin, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillTeleSpin, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillTeleThrow, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillTeleThrow, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillSlowingParry, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillSlowingParry, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -777,6 +920,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillTeslaWires, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillTeslaWires, ThunderRoad'],
         ['arcLoopEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['skillArcwireId', 'ThunderRoad.Skill.Spell.SkillArcwire, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -785,6 +929,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillThunderbolt, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillThunderbolt, ThunderRoad'],
         ['mainBoltEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['impactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['statusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
@@ -794,6 +939,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillThunderPunch, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillThunderPunch, ThunderRoad'],
         ['boltEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['baseImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['spellImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -806,6 +952,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillTwinFlame, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillTwinFlame, ThunderRoad'],
         ['remoteDetonationId', 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad'],
         ['linkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['dropEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -817,6 +964,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillWeaponTheft, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillWeaponTheft, ThunderRoad'],
         ['boltEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -824,6 +972,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillWeightlessBoost, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillWeightlessBoost, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['boostJumpSkillId', 'ThunderRoad.Skill.Spell.SkillBoostJump, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -832,6 +981,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SkillWeightlessKinesis, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SkillWeightlessKinesis, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -839,15 +989,18 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SkillGrappler, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SkillGrappler, ThunderRoad'],
         ['shardId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['orbLinkEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.SkillTreeData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['crystalItemId', 'ThunderRoad.ItemData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SpellCastTest, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SpellCastTest, ThunderRoad'],
         ['itemId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['remoteDetonationId', 'ThunderRoad.Skill.Spell.SkillRemoteDetonation, ThunderRoad'],
         ['chargeEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -874,6 +1027,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SpellMergeTest, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SpellMergeTest, ThunderRoad'],
         ['leftSpellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['rightSpellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['chargeEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -887,6 +1041,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SpellCastProjectile, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SpellCastProjectile, ThunderRoad'],
         ['projectileEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['projectileId', 'ThunderRoad.ItemData, ThunderRoad'],
         ['projectileDamagerId', 'ThunderRoad.DamagerData, ThunderRoad'],
@@ -920,6 +1075,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellMerge.SpellMergeFire, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellMerge.SpellMergeFire, ThunderRoad'],
         ['meteorEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['meteorExplosionEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['meteorItemId', 'ThunderRoad.ItemData, ThunderRoad'],
@@ -938,6 +1094,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SpellCastGravity, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SpellCastGravity, ThunderRoad'],
         ['dualPushEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['pushEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['pushStatusEffectId', 'ThunderRoad.StatusData, ThunderRoad'],
@@ -970,6 +1127,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellMerge.SpellMergeGravity, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellMerge.SpellMergeGravity, ThunderRoad'],
         ['bubbleEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['statusId', 'ThunderRoad.StatusData, ThunderRoad'],
         ['leftSpellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
@@ -985,6 +1143,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.Spell.SpellCastLightning, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.Spell.SpellCastLightning, ThunderRoad'],
         ['imbueHitEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['imbueHitRagdollEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['boltEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -1016,6 +1175,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellMerge.SpellMergeLightning, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellMerge.SpellMergeLightning, ThunderRoad'],
         ['beamEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['imbueSpellId', 'ThunderRoad.SpellCastData, ThunderRoad'],
         ['beamImpactEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -1034,6 +1194,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellPower.SpellPowerSlowTime, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellPower.SpellPowerSlowTime, ThunderRoad'],
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['hyperFocusSkillID', 'ThunderRoad.Skill.Spell.SkillHyperFocus, ThunderRoad'],
         ['focusDepletedEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -1043,6 +1204,7 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.Skill.SpellPower.SpellTelekinesis, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.Skill.SpellPower.SpellTelekinesis, ThunderRoad'],
         ['defaultHandEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['ragdollHandEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['ragdollGripEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -1056,10 +1218,14 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['primarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
         ['secondarySkillTreeId', 'ThunderRoad.SkillTreeData, ThunderRoad'],
     ])) ],
+    [ 'ThunderRoad.MeleeStanceData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.MeleeStanceData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.CatalogThreshold, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
         ['effectId', 'ThunderRoad.EffectData, ThunderRoad']
     ])) ],
     [ 'ThunderRoad.StatusDataBurning, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.StatusDataBurning, ThunderRoad'],
         ['heatAnimationId', 'ThunderRoad.AnimationData, ThunderRoad'],
         ['igniteEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['smokingMainEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -1068,28 +1234,40 @@ export const typeResolver = new Map<string, (key: string, node: jsonc.Node) => s
         ['burningLimbEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.StatusDataFloating, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.StatusDataFloating, ThunderRoad'],
         ['slamEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['lithobrakeId', 'ThunderRoad.Skill.Spell.SkillHoverSlam, ThunderRoad'],
         ['creatureEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['itemEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.StatusDataElectrocute, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.StatusDataElectrocute, ThunderRoad'],
         ['creatureEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['itemEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.StatusDataSlowed, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.StatusDataSlowed, ThunderRoad'],
         ['creatureEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['itemEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.StatusDataSpeed, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.StatusDataSpeed, ThunderRoad'],
         ['creatureEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
         ['itemEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
     ])) ],
+    [ 'ThunderRoad.TextData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.TextData, ThunderRoad']
+    ])) ],
+    [ 'ThunderRoad.VoiceData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.VoiceData, ThunderRoad']
+    ])) ],
     [ 'ThunderRoad.WaveData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
-        ['waveSelectors', 'ThunderRoad.LevelData, ThunderRoad']
+        ['id', 'ThunderRoad.WaveData, ThunderRoad'],
+        ['waveSelectors', 'ThunderRoad.LevelData, ThunderRoad'],
     ])) ],
     [ 'ThunderRoad.WaveData+Group, ThunderRoad', creatureTableDropMapper ],
     [ 'ThunderRoad.GameData, ThunderRoad', (key, n) => basicPropertyMapper(key, new Map<string, string>([
+        ['id', 'ThunderRoad.GameData, ThunderRoad'],
         ['defaultPlayerMaleCreatureID', 'ThunderRoad.CreatureData, ThunderRoad'],
         ['defaultPlayerFemaleCreatureID', 'ThunderRoad.CreatureData, ThunderRoad'],
         ['spellWheelEffectId', 'ThunderRoad.EffectData, ThunderRoad'],
@@ -1263,7 +1441,10 @@ function levelDataMapper(key: string, node: jsonc.Node) {
         }
     }
 
-    return undefined;
+    switch (key) {
+        case 'id': return 'ThunderRoad.LevelData, ThunderRoad';
+        default: return undefined;
+    }
 }
 
 function lootTableDropMapper(key: string, node: jsonc.Node) {

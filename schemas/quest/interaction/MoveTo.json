@@ -21,6 +21,9 @@
         "position": {
             "$ref": "../../Vector3.json"
         },
+        "rotation": {
+            "$ref": "../../Vector3.json"
+        },
         "moveSpeedRatio": {
             "type": "number",
             "default": 1.0

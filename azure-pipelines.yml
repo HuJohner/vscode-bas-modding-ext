@@ -35,12 +35,11 @@ steps:
   condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
 
 - bash: |
-    echo ">>> Compile vscode-test"
-    yarn && yarn compile
-    echo ">>> Compiled vscode-test"
-    cd sample
-    echo ">>> Run sample integration test"
-    yarn && yarn compile && yarn test
+    echo ">>> Install dependencies"
+    npm ci
+    echo ">>> Run extension tests"
+    npm test
+    echo ">>> Tests completed"
   displayName: Run Tests
   env:
     DISPLAY: ':99.0'
@@ -56,7 +55,7 @@ steps:
     test -f ./type-resolvers.json
     test -d ./schemas
     test -d ./snippets
-    yarn deploy
+    npm run deploy
   displayName: Publish
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Agent.OS'], 'Linux'))
   env:

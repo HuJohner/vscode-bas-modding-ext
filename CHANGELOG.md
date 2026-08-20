@@ -4,6 +4,10 @@ All notable changes to the "bas-modding" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-08-20
+
+- extracted catalog data into separate repo
+
 ## [0.3.1] - 2025-10-12
 
 - fixed catalog data cache not updating when creating new files

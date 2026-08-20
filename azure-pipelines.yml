@@ -18,6 +18,9 @@ strategy:
 pool:
   vmImage: $(imageName)
 
+variables:
+  dataRepositoryUrl: 'https://github.com/HuJohner/vscode-bas-modding-ext-data.git'
+
 steps:
 
 - task: NodeTool@0
@@ -32,19 +35,27 @@ steps:
   condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
 
 - bash: |
-    echo ">>> Compile vscode-test"
-    yarn && yarn compile
-    echo ">>> Compiled vscode-test"
-    cd sample
-    echo ">>> Run sample integration test"
-    yarn && yarn compile && yarn test
+    echo ">>> Install dependencies"
+    npm ci
+    echo ">>> Run extension tests"
+    npm test
+    echo ">>> Tests completed"
   displayName: Run Tests
   env:
     DISPLAY: ':99.0'
 
 - bash: |
     echo ">>> Publish"
-    yarn deploy
+    data_repo="$(Build.SourcesDirectory)/.release-data"
+    trap 'rm -rf "$data_repo" schemas snippets type-resolvers.json' EXIT
+    git clone --depth 1 "$(dataRepositoryUrl)" "$data_repo"
+    cp -R "$data_repo/schemas" ./schemas
+    cp -R "$data_repo/snippets" ./snippets
+    cp "$data_repo/type-resolvers.json" ./type-resolvers.json
+    test -f ./type-resolvers.json
+    test -d ./schemas
+    test -d ./snippets
+    npm run deploy
   displayName: Publish
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Agent.OS'], 'Linux'))
   env:

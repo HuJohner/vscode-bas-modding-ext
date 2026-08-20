@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as jsonc from 'jsonc-parser';
 
-import { typeResolver } from '../catalog-data/catalogDataTypeMappers';
+import { typeResolver } from '../catalog-data/catalogDataResolver';
 
 export function parseCatalogTypeAndValue(document: vscode.TextDocument, position: vscode.Position) {
     const wordRange = document.getWordRangeAtPosition(position, /"[^"]*"/);

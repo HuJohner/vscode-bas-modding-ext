@@ -82,7 +82,7 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "deploy": "vsce publish"
+    "deploy": "vsce publish --azure-credential"
   },
   "overrides": {
     "diff": "^9.0.0",

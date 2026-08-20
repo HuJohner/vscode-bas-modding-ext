@@ -45,9 +45,10 @@ steps:
     DISPLAY: ':99.0'
 
 - bash: |
-    echo ">>> Publish"
-    data_repo="$(Build.SourcesDirectory)/.release-data"
-    trap 'rm -rf "$data_repo" schemas snippets type-resolvers.json' EXIT
+    set -e
+    echo ">>> Stage release data"
+    data_repo="$(Agent.TempDirectory)/.release-data"
+    trap 'rm -rf "$data_repo"' EXIT
     git clone --depth 1 "$(dataRepositoryUrl)" "$data_repo"
     cp -R "$data_repo/schemas" ./schemas
     cp -R "$data_repo/snippets" ./snippets
@@ -55,8 +56,18 @@ steps:
     test -f ./type-resolvers.json
     test -d ./schemas
     test -d ./snippets
-    npm run deploy
-  displayName: Publish
+  displayName: Stage release data
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Agent.OS'], 'Linux'))
-  env:
-    VSCE_PAT: $(VSCE_PAT)
+
+- task: AzureCLI@2
+  displayName: Publish using managed identity
+  inputs:
+    azureSubscription: 'vscode-marketplace-publish'
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      set -e
+      trap 'rm -rf schemas snippets type-resolvers.json' EXIT
+      cd "$(Build.SourcesDirectory)"
+      npm run deploy
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'), eq(variables['Agent.OS'], 'Linux'))

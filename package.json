@@ -38,6 +38,18 @@
           "scope": "resource",
           "default": "",
           "description": "Path to your local SDK."
+        },
+        "bas-modding.dataRepository": {
+          "type": "string",
+          "scope": "machine",
+          "default": "https://github.com/HuJohner/vscode-bas-modding-ext-data",
+          "description": "Git repository containing runtime schemas, snippets, and type-resolvers.json."
+        },
+        "bas-modding.dataBranch": {
+          "type": "string",
+          "scope": "machine",
+          "default": "main",
+          "description": "Branch to pull from the runtime data repository."
         }
       }
     },
@@ -45,6 +57,11 @@
       {
         "command": "bas-modding.newMod",
         "title": "New BaS Mod",
+        "category": "BaS Mod"
+      },
+      {
+        "command": "bas-modding.refreshData",
+        "title": "Refresh BaS Modding Data",
         "category": "BaS Mod"
       }
     ],
@@ -56,22 +73,7 @@
         }
       ]
     },
-    "snippets": [
-      {
-        "language": "json",
-        "path": "./snippets/CatalogData.json"
-      },
-      {
-        "language": "json",
-        "path": "./snippets/QuestData.json"
-      }
-    ],
-    "jsonValidation": [
-      {
-        "fileMatch": "Quest_*.json",
-        "url": "./schemas/catalogdata/QuestData.json"
-      }
-    ]
+    "jsonValidation": []
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -82,6 +84,10 @@
     "test": "node ./out/test/runTest.js",
     "deploy": "vsce publish --yarn"
   },
+  "overrides": {
+    "diff": "^9.0.0",
+    "serialize-javascript": "^7.1.0"
+  },
   "devDependencies": {
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.10",
@@ -90,13 +96,14 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vscode/test-electron": "^2.5.2",
-    "@vscode/vsce": "^2.32.0",
+    "@vscode/vsce": "^3.9.2",
     "eslint": "^8.57.1",
     "glob": "^8.1.0",
-    "mocha": "^10.8.2",
+    "mocha": "^11.8.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "jsonc-parser": "^3.3.1"
+    "jsonc-parser": "^3.3.1",
+    "vscode-json-languageservice": "^5.7.2"
   }
 }

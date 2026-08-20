@@ -13,7 +13,12 @@
 
 ## Requirements
 
-There are no requirements or dependencies.
+Git is optional. When Git is unavailable, GitHub repositories are downloaded over HTTPS.
+
+## Runtime data repository
+
+Schemas, snippets, and catalog type resolvers are loaded from a Git repository at runtime.
+The repository is cached in VS Code global storage and updated when the extension activates. If Git is unavailable, the configured GitHub repository is downloaded over HTTPS instead. Run `BaS Mod: Refresh BaS Modding Data` after changing the repository. The last successful cache remains available when the user is offline.
 
 ## Known Issues
 

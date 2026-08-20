@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
+import { getGeneralType } from './catalogDataResolver';
 
 export class CatalogDataCache {
     private static uriCache = new Map<string, vscode.Uri>();
@@ -63,6 +64,10 @@ export class CatalogDataCache {
     private static async parseFileForDefinitions(uri: vscode.Uri) {
         try {
             const content = await fs.promises.readFile(uri.fsPath, 'utf-8');
+
+            if (!content) {
+                return;
+            }
             
             const json = JSON.parse(content);
             if (!json.$type || !json.id) {
@@ -73,16 +78,7 @@ export class CatalogDataCache {
             if (!CatalogDataCache.uriCache.has(cacheKey)) {
                 CatalogDataCache.uriCache.set(cacheKey, uri);
 
-                let generalType = undefined;
-                if (json.$type.startsWith('ThunderRoad.AreaCollection')) {
-                    generalType = 'ThunderRoad.AreaCollection, ThunderRoad';
-                } else if (json.$type.startsWith('ThunderRoad.StatusData')) {
-                    generalType = 'ThunderRoad.StatusData, ThunderRoad';
-                } else if (json.$type.startsWith('ThunderRoad.Skill.Spell.SpellCast')) {
-                    generalType = 'ThunderRoad.SpellCastData, ThunderRoad';
-                } else if (json.$type.startsWith('ThunderRoad.Skill.')) {
-                    generalType = 'ThunderRoad.SkillData, ThunderRoad';
-                }
+                const generalType = getGeneralType(json.$type);
                 const generalCacheKey = generalType ? `${generalType}.${json.id}` : undefined;
                 if (generalCacheKey) {
                     CatalogDataCache.uriCache.set(generalCacheKey, uri);
